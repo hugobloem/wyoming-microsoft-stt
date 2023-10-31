@@ -4,8 +4,8 @@
 # Start Microsoft service
 # ==============================================================================
 flags=()
-if bashio::config.true 'update_voices'; then
-    flags+=('--update-voices')
+if bashio::config.true 'update_languages'; then
+    flags+=('--update-languages')
 fi
 
 if bashio::config.true 'debug_logging'; then
