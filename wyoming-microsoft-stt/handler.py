@@ -2,6 +2,8 @@
 import argparse
 import asyncio
 import logging
+import wave
+import tempfile
 
 from wyoming.asr import Transcribe, Transcript
 from wyoming.audio import AudioChunk, AudioChunkConverter, AudioStop
@@ -40,6 +42,11 @@ class MicrosoftEventHandler(AsyncEventHandler):
         )
         self._language = self.cli_args.language
 
+        output_dir = str(tempfile.TemporaryDirectory() if not args.debug else './tmp/')
+        output_dir = Path(output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        self.output_dir = output_dir
+
     async def handle_event(self, event: Event) -> bool:
         if Describe.is_type(event.type):
             await self.write_event(self.wyoming_info_event)
@@ -65,13 +72,14 @@ class MicrosoftEventHandler(AsyncEventHandler):
 
         if AudioStop.is_type(event.type):
             _LOGGER.debug("Audio stopped")
+            filename = self.output_dir / f"{time.monotonic_ns()}.wav"
+            self.write_file(filename, self.audio)
             async with self.model_lock:
-                segments, _info = self.model.transcribe(
-                    self.audio,
+                text = self.model.transcribe(
+                    filename,
                     language=self._language,
                 )
 
-            text = " ".join(segment.text for segment in segments)
             _LOGGER.info(text)
 
             await self.write_event(Transcript(text=text).event())
@@ -84,3 +92,12 @@ class MicrosoftEventHandler(AsyncEventHandler):
             return False
 
         return True
+
+    def write_file(self, filename: str, data: bytes) -> None:
+        """Write data to a  wav file."""
+        wav_file: wave.Wave_write = wave.open(filename, "wb")
+        with wav_file:
+            wav_file.setnchannels(1)
+            wav_file.setsampwidth(2)
+            wav_file.setframerate(16000)
+            wav_file.writeframes(data)

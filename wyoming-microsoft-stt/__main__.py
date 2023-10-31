@@ -3,7 +3,6 @@ import argparse
 import asyncio
 import logging
 from functools import partial
-from pathlib import Path
 from typing import Optional
 
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info

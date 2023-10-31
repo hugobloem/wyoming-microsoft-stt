@@ -2,7 +2,6 @@ import azure.cognitiveservices.speech as speechsdk
 from pathlib import Path
 import time
 import logging
-import tempfile
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -10,11 +9,6 @@ class MicrosoftSTT:
     def __init__(self, args) -> None:
         self.args = args
         self.speech_config = speechsdk.SpeechConfig(subscription=args.subscription_key, region=args.service_region)
-
-        input_dir = str(tempfile.TemporaryDirectory())
-        input_dir = Path(input_dir)
-        input_dir.mkdir(parents=True, exist_ok=True)
-        self.input_dir = input_dir
 
     def transcribe(self, filename, language=None):
         if language is None:
