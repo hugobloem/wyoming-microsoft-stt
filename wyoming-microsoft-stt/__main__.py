@@ -36,23 +36,8 @@ async def main() -> None:
         help="Directory to download models into (default: first data dir)",
     )
     parser.add_argument(
-        "--device",
-        default="cpu",
-        help="Device to use for inference (default: cpu)",
-    )
-    parser.add_argument(
         "--language",
         help="Default language to set for transcription",
-    )
-    parser.add_argument(
-        "--compute-type",
-        default="default",
-        help="Compute type (float16, int8, etc.)",
-    )
-    parser.add_argument(
-        "--beam-size",
-        type=int,
-        default=5,
     )
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
     args = parser.parse_args()
