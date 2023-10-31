@@ -14,7 +14,7 @@
                 "--download-dir", "./temp/",
                 "--service-region", "uksouth", 
                 "--debug",
-                "--uri", "tcp://0.0.0.0:10200"
+                "--uri", "tcp://0.0.0.0:10300"
             ]
         },
         {

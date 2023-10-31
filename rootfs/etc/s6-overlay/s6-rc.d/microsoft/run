@@ -1,0 +1,20 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Start Microsoft service
+# ==============================================================================
+flags=()
+if bashio::config.true 'update_voices'; then
+    flags+=('--update-voices')
+fi
+
+if bashio::config.true 'debug_logging'; then
+    flags+=('--debug')
+fi
+
+exec python3 -m wyoming-microsoft-stt \
+    --uri "tcp://0.0.0.0:10300" \
+    --subscription-key "$(bashio::config 'subscription_key')" \
+    --service-region "$(bashio::config 'service_region')" \
+    --download-dir /data \
+    ${flags[@]}
