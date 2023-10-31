@@ -1,5 +1,4 @@
 import azure.cognitiveservices.speech as speechsdk
-from pathlib import Path
 import time
 import logging
 
