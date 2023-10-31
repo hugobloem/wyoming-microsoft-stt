@@ -1,0 +1,22 @@
+---
+name: "Microsoft STT"
+description: "Speech to text using Microsoft Azure"
+version: "1.0.0"
+slug: "wyoming_microsoft_stt"
+init: false
+arch:
+  - aarch64
+  - amd64
+discovery:
+  - wyoming
+ports:
+  "10300/tcp": null
+options:
+  debug_logging: false
+  update_voices: true
+schema:
+  subscription_key: str
+  service_region: str
+  debug_logging: bool
+  update_voices: bool
+
