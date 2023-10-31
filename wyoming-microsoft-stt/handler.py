@@ -30,7 +30,7 @@ class MicrosoftEventHandler(AsyncEventHandler):
 
         self.cli_args = cli_args
         self.wyoming_info_event = wyoming_info.event()
-        # self.model = model
+        self.model = model
         self.model_lock = model_lock
         self.audio = bytes()
         self.audio_converter = AudioChunkConverter(
@@ -68,7 +68,6 @@ class MicrosoftEventHandler(AsyncEventHandler):
             async with self.model_lock:
                 segments, _info = self.model.transcribe(
                     self.audio,
-                    beam_size=self.cli_args.beam_size,
                     language=self._language,
                 )
 
