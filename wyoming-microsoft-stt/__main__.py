@@ -37,6 +37,7 @@ async def main() -> None:
     )
     parser.add_argument(
         "--language",
+        default="en-GB",
         help="Default language to set for transcription",
     )
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
