@@ -5,7 +5,7 @@ import setuptools
 from setuptools import setup
 
 this_dir = Path(__file__).parent
-module_dir = this_dir / "wyoming-microsoft-stt
+module_dir = this_dir / "wyoming-microsoft-stt"
 
 requirements = []
 requirements_path = this_dir / "requirements.txt"
