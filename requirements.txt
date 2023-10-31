@@ -1,0 +1,2 @@
+wyoming==1.2.0
+azure-cognitiveservices-speech==1.32.1

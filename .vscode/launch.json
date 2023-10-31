@@ -1,0 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug __main__",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/wyoming-microsoft-stt/__main__.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "--download-dir", "./temp/",
+                "--service-region", "uksouth", 
+                "--debug",
+                "--uri", "tcp://0.0.0.0:10200"
+            ]
+        },
+        {
+            "name": "Debug microsoft_stt.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/microsoft_stt.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "--voice", "en-GB-SoniaNeural",
+                "--service-region", "uksouth", 
+                "--output-dir", "./temp/",
+                "--debug"
+            ]
+        }
+    ]
+}
