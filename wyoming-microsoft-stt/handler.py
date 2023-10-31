@@ -9,7 +9,7 @@ from wyoming.event import Event
 from wyoming.info import Describe, Info
 from wyoming.server import AsyncEventHandler
 
-from microsoft_stt import MicrosoftSTT
+from .microsoft_stt import MicrosoftSTT
 
 _LOGGER = logging.getLogger(__name__)
 

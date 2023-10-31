@@ -9,10 +9,9 @@ from typing import Optional
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info
 from wyoming.server import AsyncServer
 
-# from .const import WHISPER_LANGUAGES
-from download import get_languages
-from microsoft_stt import MicrosoftSTT
-from handler import MicrosoftEventHandler
+from .download import get_languages
+from .microsoft_stt import MicrosoftSTT
+from .handler import MicrosoftEventHandler
 
 _LOGGER = logging.getLogger(__name__)
 
