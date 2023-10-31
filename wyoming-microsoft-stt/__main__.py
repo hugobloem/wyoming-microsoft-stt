@@ -40,11 +40,16 @@ async def main() -> None:
         default="en-GB",
         help="Default language to set for transcription",
     )
+    parser.add_argument(
+        "--update-languages",
+        action="store_true",
+        help="Download latest languages.json during startup",
+    )
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
     args = parser.parse_args()
 
     # Load languages
-    languages = get_languages(args.download_dir, update_languages=True, region=args.service_region, key=args.subscription_key)
+    languages = get_languages(args.download_dir, update_languages=args.update_languages, region=args.service_region, key=args.subscription_key)
 
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
 

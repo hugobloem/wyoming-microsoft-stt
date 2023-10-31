@@ -12,7 +12,8 @@
             },
             "args": [
                 "--download-dir", "./temp/",
-                "--service-region", "uksouth", 
+                "--service-region", "uksouth",
+                "--update_languages", 
                 "--debug",
                 "--uri", "tcp://0.0.0.0:10300"
             ]
