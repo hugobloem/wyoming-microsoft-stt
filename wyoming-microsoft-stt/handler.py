@@ -4,6 +4,7 @@ import asyncio
 import logging
 import wave
 import tempfile
+from pathlib import Path
 
 from wyoming.asr import Transcribe, Transcript
 from wyoming.audio import AudioChunk, AudioChunkConverter, AudioStop
