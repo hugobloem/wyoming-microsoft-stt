@@ -19,4 +19,4 @@ schema:
   service_region: str
   debug_logging: bool
   update_voices: bool
-
+tmpfs: true
