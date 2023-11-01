@@ -42,7 +42,7 @@ class MicrosoftEventHandler(AsyncEventHandler):
         )
         self._language = self.cli_args.language
 
-        output_dir = str(tempfile.TemporaryDirectory() if not args.debug else './tmp/')
+        output_dir = str(tempfile.TemporaryDirectory() if not cli_args.debug else './tmp/')
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
         self.output_dir = output_dir
