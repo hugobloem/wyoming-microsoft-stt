@@ -1,2 +1,0 @@
-- name: Home Assistant builder
-  uses: home-assistant/builder@2023.09.0
