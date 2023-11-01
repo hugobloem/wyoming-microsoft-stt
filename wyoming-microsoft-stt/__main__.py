@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
-import argparse
+import argparse  # noqa: D100
 import asyncio
 import logging
 from functools import partial
-from typing import Optional
+import contextlib
 
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info
 from wyoming.server import AsyncServer
@@ -16,7 +15,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def main() -> None:
-    """Main entry point."""
+    """Start Wyoming Microsoft STT server."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--service-region",
@@ -47,11 +46,14 @@ async def main() -> None:
     args = parser.parse_args()
 
     # Load languages
-    languages = get_languages(args.download_dir, update_languages=args.update_languages, region=args.service_region, key=args.subscription_key)
+    languages = get_languages(
+        args.download_dir,
+        update_languages=args.update_languages,
+        region=args.service_region,
+        key=args.subscription_key,
+    )
 
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
-
-    model = MicrosoftSTT(args)
 
     wyoming_info = Info(
         asr=[
@@ -65,7 +67,7 @@ async def main() -> None:
                 installed=True,
                 models=[
                     AsrModel(
-                        name= "Microsoft STT",
+                        name="Microsoft STT",
                         description="Microsoft speech transcription",
                         attribution=Attribution(
                             name="Hugo Bloem",
@@ -100,7 +102,5 @@ async def main() -> None:
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    try:
+    with contextlib.suppress(KeyboardInterrupt):
         asyncio.run(main())
-    except KeyboardInterrupt:
-        pass
