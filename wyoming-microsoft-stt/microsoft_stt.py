@@ -9,7 +9,7 @@ class MicrosoftSTT:
         self.args = args
         self.speech_config = speechsdk.SpeechConfig(subscription=args.subscription_key, region=args.service_region)
 
-    def transcribe(self, filename, language=None):
+    def transcribe(self, filename: str, language=None):
         if language is None:
             language = self.args.language
 

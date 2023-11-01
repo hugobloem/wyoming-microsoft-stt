@@ -75,10 +75,10 @@ class MicrosoftEventHandler(AsyncEventHandler):
         if AudioStop.is_type(event.type):
             _LOGGER.debug("Audio stopped")
             filename = self.output_dir / f"{time.monotonic_ns()}.wav"
-            self.write_file(filename, self.audio)
+            self.write_file(str(filename), self.audio)
             async with self.model_lock:
                 text = self.model.transcribe(
-                    filename,
+                    str(filename),
                     language=self._language,
                 )
 
