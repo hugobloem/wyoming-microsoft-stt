@@ -1,8 +1,7 @@
 """Utility for downloading Microsoft STT languages."""
 import logging
 from pathlib import Path
-from typing import Any, Dict, Union
-from urllib.error import URLError
+from typing import Any
 from urllib.parse import quote, urlsplit, urlunsplit
 from urllib.request import urlopen, Request
 import json
@@ -20,14 +19,14 @@ def _quote_url(url: str) -> str:
     return urlunsplit(parts)
 
 def transform_languages_files(response):
-    """Transforms the languages.json file from the Microsoft API to the format used by Piper."""
+    """Transform the languages.json file from the Microsoft API to the format used by Piper."""
     languages = json.load(response)
     return languages
 
 def get_languages(
-    download_dir: Union[str, Path], update_languages: bool = False, region: str = "westus", key: str = ""
-) -> Dict[str, Any]:
-    """Loads available languages from downloaded or embedded JSON file."""
+    download_dir: str | Path, update_languages: bool = False, region: str = "westus", key: str = ""
+) -> dict[str, Any]:
+    """Load available languages from downloaded or embedded JSON file."""
     download_dir = Path(download_dir)
     languages_download = download_dir / "languages.json"
 
@@ -38,9 +37,8 @@ def get_languages(
             languages_hdr = {URL_HEADER: key}
             _LOGGER.debug("Downloading %s to %s", languages_url, languages_download)
             req = Request(_quote_url(languages_url), headers=languages_hdr)
-            with urlopen(req) as response:
-                with open(languages_download, "w") as download_file:
-                    json.dump(transform_languages_files(response), download_file, indent=4)
+            with urlopen(req) as response, open(languages_download, "w") as download_file:
+                json.dump(transform_languages_files(response), download_file, indent=4)
         except Exception as e:
             _LOGGER.exception("Failed to download languages.json: %s", e)
             _LOGGER.exception("Failed to update languages list")
@@ -49,7 +47,7 @@ def get_languages(
     if languages_download.exists():
         try:
             _LOGGER.debug("Loading %s", languages_download)
-            with open(languages_download, "r", encoding="utf-8") as languages_file:
+            with open(languages_download, encoding="utf-8") as languages_file:
                 return json.load(languages_file)
         except Exception:
             _LOGGER.exception("Failed to load %s", languages_download)
@@ -57,5 +55,5 @@ def get_languages(
     # Fall back to embedded
     languages_embedded = _DIR / "languages.json"
     _LOGGER.debug("Loading %s", languages_embedded)
-    with open(languages_embedded, "r", encoding="utf-8") as languages_file:
+    with open(languages_embedded, encoding="utf-8") as languages_file:
         return json.load(languages_file)

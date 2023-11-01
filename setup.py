@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-from pathlib import Path
+from pathlib import Path # noqa: D100
 
 import setuptools
 from setuptools import setup
@@ -10,7 +9,7 @@ module_dir = this_dir / "wyoming-microsoft-stt"
 requirements = []
 requirements_path = this_dir / "requirements.txt"
 if requirements_path.is_file():
-    with open(requirements_path, "r", encoding="utf-8") as requirements_file:
+    with open(requirements_path, encoding="utf-8") as requirements_file:
         requirements = requirements_file.read().splitlines()
 
 data_files = [module_dir / "languages.json"]

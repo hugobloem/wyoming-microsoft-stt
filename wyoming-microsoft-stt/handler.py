@@ -30,13 +30,14 @@ class MicrosoftEventHandler(AsyncEventHandler):
         *args,
         **kwargs,
     ) -> None:
+        """Initialize."""
         super().__init__(*args, **kwargs)
 
         self.cli_args = cli_args
         self.wyoming_info_event = wyoming_info.event()
         self.model = model
         self.model_lock = model_lock
-        self.audio = bytes()
+        self.audio = b''
         self.audio_converter = AudioChunkConverter(
             rate=16000,
             width=2,
@@ -50,6 +51,7 @@ class MicrosoftEventHandler(AsyncEventHandler):
         self.output_dir = output_dir
 
     async def handle_event(self, event: Event) -> bool:
+        """Handle an event."""
         if Describe.is_type(event.type):
             await self.write_event(self.wyoming_info_event)
             _LOGGER.debug("Sent info")
@@ -88,7 +90,7 @@ class MicrosoftEventHandler(AsyncEventHandler):
             _LOGGER.debug("Completed request")
 
             # Reset
-            self.audio = bytes()
+            self.audio = b''
             self._language = self.cli_args.language
 
             return False
