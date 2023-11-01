@@ -1,4 +1,4 @@
-from pathlib import Path # noqa: D100
+from pathlib import Path  # noqa: D100
 
 import setuptools
 from setuptools import setup

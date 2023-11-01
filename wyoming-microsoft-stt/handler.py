@@ -37,7 +37,7 @@ class MicrosoftEventHandler(AsyncEventHandler):
         self.wyoming_info_event = wyoming_info.event()
         self.model = model
         self.model_lock = model_lock
-        self.audio = b''
+        self.audio = b""
         self.audio_converter = AudioChunkConverter(
             rate=16000,
             width=2,
@@ -45,7 +45,9 @@ class MicrosoftEventHandler(AsyncEventHandler):
         )
         self._language = self.cli_args.language
 
-        output_dir = str(tempfile.TemporaryDirectory() if not cli_args.debug else './tmp/')
+        output_dir = str(
+            tempfile.TemporaryDirectory() if not cli_args.debug else "./tmp/"
+        )
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
         self.output_dir = output_dir
@@ -90,7 +92,7 @@ class MicrosoftEventHandler(AsyncEventHandler):
             _LOGGER.debug("Completed request")
 
             # Reset
-            self.audio = b''
+            self.audio = b""
             self._language = self.cli_args.language
 
             return False

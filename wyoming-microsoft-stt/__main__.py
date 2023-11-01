@@ -1,4 +1,4 @@
-import argparse # noqa: D100
+import argparse  # noqa: D100
 import asyncio
 import logging
 from functools import partial
@@ -46,7 +46,12 @@ async def main() -> None:
     args = parser.parse_args()
 
     # Load languages
-    languages = get_languages(args.download_dir, update_languages=args.update_languages, region=args.service_region, key=args.subscription_key)
+    languages = get_languages(
+        args.download_dir,
+        update_languages=args.update_languages,
+        region=args.service_region,
+        key=args.subscription_key,
+    )
 
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
 
@@ -62,7 +67,7 @@ async def main() -> None:
                 installed=True,
                 models=[
                     AsrModel(
-                        name= "Microsoft STT",
+                        name="Microsoft STT",
                         description="Microsoft speech transcription",
                         attribution=Attribution(
                             name="Hugo Bloem",

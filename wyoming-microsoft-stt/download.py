@@ -12,19 +12,25 @@ URL_HEADER = "Ocp-Apim-Subscription-Key"
 _DIR = Path(__file__).parent
 _LOGGER = logging.getLogger(__name__)
 
+
 def _quote_url(url: str) -> str:
     """Quote file part of URL in case it contains UTF-8 characters."""
     parts = list(urlsplit(url))
     parts[2] = quote(parts[2])
     return urlunsplit(parts)
 
+
 def transform_languages_files(response):
     """Transform the languages.json file from the Microsoft API to the format used by Piper."""
     languages = json.load(response)
     return languages
 
+
 def get_languages(
-    download_dir: str | Path, update_languages: bool = False, region: str = "westus", key: str = ""
+    download_dir: str | Path,
+    update_languages: bool = False,
+    region: str = "westus",
+    key: str = "",
 ) -> dict[str, Any]:
     """Load available languages from downloaded or embedded JSON file."""
     download_dir = Path(download_dir)
@@ -37,7 +43,9 @@ def get_languages(
             languages_hdr = {URL_HEADER: key}
             _LOGGER.debug("Downloading %s to %s", languages_url, languages_download)
             req = Request(_quote_url(languages_url), headers=languages_hdr)
-            with urlopen(req) as response, open(languages_download, "w") as download_file:
+            with urlopen(req) as response, open(
+                languages_download, "w"
+            ) as download_file:
                 json.dump(transform_languages_files(response), download_file, indent=4)
         except Exception as e:
             _LOGGER.exception("Failed to download languages.json: %s", e)
