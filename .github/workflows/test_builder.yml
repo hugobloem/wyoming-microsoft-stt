@@ -15,5 +15,5 @@ jobs:
           args: |
             --test \
             --all \
-            --target addon-folder \
+            --target . \
             --docker-hub ${{ secrets.DOCKERHUB_USERNAME }}
