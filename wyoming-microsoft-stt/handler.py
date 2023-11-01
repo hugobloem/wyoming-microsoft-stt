@@ -5,6 +5,7 @@ import logging
 import wave
 import tempfile
 from pathlib import Path
+import time
 
 from wyoming.asr import Transcribe, Transcript
 from wyoming.audio import AudioChunk, AudioChunkConverter, AudioStop
