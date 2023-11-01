@@ -5,8 +5,11 @@ version: "1.0.0"
 slug: "wyoming_microsoft_stt"
 init: false
 arch:
+  - armhf
+  - armv7
   - aarch64
   - amd64
+  - i386
 discovery:
   - wyoming
 ports:
