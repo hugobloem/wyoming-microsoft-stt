@@ -1,7 +1,7 @@
 """Utility for downloading Microsoft STT languages."""
 import logging
 from pathlib import Path
-from typing import Any
+from typing import Any, Union
 from urllib.parse import quote, urlsplit, urlunsplit
 from urllib.request import urlopen, Request
 import json
@@ -27,7 +27,7 @@ def transform_languages_files(response):
 
 
 def get_languages(
-    download_dir: str | Path,
+    download_dir: Union(str, Path),
     update_languages: bool = False,
     region: str = "westus",
     key: str = "",
