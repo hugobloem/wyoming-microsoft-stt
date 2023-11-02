@@ -27,7 +27,7 @@ def transform_languages_files(response):
 
 
 def get_languages(
-    download_dir: Union(str, Path),
+    download_dir: Union[str, Path],
     update_languages: bool = False,
     region: str = "westus",
     key: str = "",
