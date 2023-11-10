@@ -27,7 +27,9 @@ async def main() -> None:
         required=True,
         help="Microsoft Azure subscription key",
     )
-    parser.add_argument("--uri", required=True, help="unix:// or tcp://")
+    parser.add_argument(
+        "--uri", default="tcp://0.0.0.0:10300", help="unix:// or tcp://"
+    )
     parser.add_argument(
         "--download-dir",
         help="Directory to download models into (default: first data dir)",
