@@ -32,7 +32,8 @@ async def main() -> None:
     )
     parser.add_argument(
         "--download-dir",
-        help="Directory to download models into (default: first data dir)",
+        default="/tmp/",
+        help="Directory to download languages.json into (default: /tmp/)",
     )
     parser.add_argument(
         "--language",
