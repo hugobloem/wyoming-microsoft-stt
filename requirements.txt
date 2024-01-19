@@ -1,3 +1,3 @@
-wyoming==1.5.0
+wyoming==1.5.2
 azure-cognitiveservices-speech==1.34.1
 ruff
