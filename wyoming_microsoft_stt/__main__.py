@@ -10,6 +10,7 @@ from wyoming.server import AsyncServer
 from .download import get_languages
 from .microsoft_stt import MicrosoftSTT
 from .handler import MicrosoftEventHandler
+from .version import __version__
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -68,6 +69,7 @@ async def main() -> None:
                     name="Hugo Bloem",
                     url="https://github.com/hugobloem/wyoming-microsoft-stt/",
                 ),
+                version=__version__,
                 installed=True,
                 models=[
                     AsrModel(
@@ -77,6 +79,7 @@ async def main() -> None:
                             name="Hugo Bloem",
                             url="https://github.com/hugobloem/wyoming-microsoft-stt/",
                         ),
+                        version=__version__,
                         installed=True,
                         languages=languages,
                     )

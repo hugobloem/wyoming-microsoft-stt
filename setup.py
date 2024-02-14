@@ -2,9 +2,10 @@ from pathlib import Path  # noqa: D100
 
 import setuptools
 from setuptools import setup
+from wyoming_microsoft_stt.version import __version__
 
 this_dir = Path(__file__).parent
-module_dir = this_dir / "wyoming-microsoft-stt"
+module_dir = this_dir / "wyoming_microsoft_stt"
 
 requirements = []
 requirements_path = this_dir / "requirements.txt"
@@ -17,8 +18,8 @@ data_files = [module_dir / "languages.json"]
 # -----------------------------------------------------------------------------
 
 setup(
-    name="wyoming-microsoft-stt",
-    version="1.0.4",
+    name="wyoming_microsoft_stt",
+    version=__version__,
     description="Wyoming Server for Microsoft STT",
     url="https://github.com/hugobloem/wyoming-microsoft-stt",
     author="Hugo Bloem",
@@ -26,7 +27,7 @@ setup(
     license="MIT",
     packages=setuptools.find_packages(),
     package_data={
-        "wyoming-microsoft-stt": [str(p.relative_to(module_dir)) for p in data_files]
+        "wyoming_microsoft_stt": [str(p.relative_to(module_dir)) for p in data_files]
     },
     install_requires=requirements,
     classifiers=[
