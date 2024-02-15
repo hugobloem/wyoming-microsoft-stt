@@ -2,7 +2,6 @@ from pathlib import Path  # noqa: D100
 
 import setuptools
 from setuptools import setup
-from wyoming_microsoft_stt.version import __version__
 
 this_dir = Path(__file__).parent
 module_dir = this_dir / "wyoming_microsoft_stt"
@@ -19,7 +18,7 @@ data_files = [module_dir / "languages.json"]
 
 setup(
     name="wyoming_microsoft_stt",
-    version=__version__,
+    version="1.0.5",
     description="Wyoming Server for Microsoft STT",
     url="https://github.com/hugobloem/wyoming-microsoft-stt",
     author="Hugo Bloem",
