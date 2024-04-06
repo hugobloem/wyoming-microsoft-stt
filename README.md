@@ -31,7 +31,11 @@ Depending on your use case there are different installation options.
   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fhome-assistant%2Faddons-example)
 
 - **Docker container**
-  Coming soon...
+  To run as a Docker container use the following command:
+  ```bash
+  docker run ghcr.io/hugobloem/wyoming-microsoft-stt-noha:latest --<key> <value>
+  ```
+  For the relevant keys please look at [the table below](#usage)
 
 ## Usage
 Depending on the installation method parameters are parsed differently. However, the same options are used for each of the installation methods and can be found in the table below. Your service region and subscription key can be found on the speech service resource page (step 5 the Azure Speech service instructions).
