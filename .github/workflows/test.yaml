@@ -1,0 +1,35 @@
+name: Test
+
+on:
+  pull_request:
+    branches: [main, dev]
+
+env:
+  SPEECH_REGION: ${{ secrets.SPEECH_REGION }}
+  SPEECH_KEY: ${{ secrets.SPEECH_KEY }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+    - name: "Checkout the repository"
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: "Install dependencies"
+      run: |
+        python3 -m pip install uv
+        python3 -m uv pip install . pytest
+
+    - name: "Test with pytest"    
+      run: |
+        pytest
