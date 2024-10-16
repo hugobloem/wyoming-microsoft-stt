@@ -17,6 +17,11 @@ jobs:
         python-version: ["3.11", "3.12", "3.13"]
 
     steps:
+    - name: "Install requirements"
+      run: |
+        sudo apt-get update
+        sudo apt-get install build-essential ca-certificates libasound2-dev libssl-dev wget
+        
     - name: "Checkout the repository"
       uses: actions/checkout@v4
 
