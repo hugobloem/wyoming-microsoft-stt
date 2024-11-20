@@ -12,7 +12,7 @@ class MicrosoftSTT:
         """Initialize."""
         self.args = args
         try:
-            # Allow more flexible subscription key validation to accommodate non-standard keys
+            # Adjust subscription key validation to accommodate complex keys, including long mixed character keys
             if not re.match(r'^[A-Za-z0-9\-_]{40,}$', args.subscription_key):
                 _LOGGER.warning("The subscription key does not match the expected format but will attempt to initialize.")
             self.speech_config = speechsdk.SpeechConfig(
