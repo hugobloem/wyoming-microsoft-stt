@@ -5,6 +5,8 @@ from typing import Any, Union
 from urllib.parse import quote, urlsplit, urlunsplit
 from urllib.request import urlopen, Request
 import json
+import time
+from urllib.error import URLError
 
 URL_FORMAT = "https://{region}.cognitiveservices.azure.com/speechtotext/v3.1/transcriptions/locales"
 URL_HEADER = "Ocp-Apim-Subscription-Key"
@@ -34,22 +36,29 @@ def get_languages(
 ) -> dict[str, Any]:
     """Load available languages from downloaded or embedded JSON file."""
     download_dir = Path(download_dir)
-    languages_download = download_dir / "languages.json"
+    languages_download = Path("/tmp/languages.json")
 
     if update_languages:
-        # Download latest languages.json
-        try:
-            languages_url = URL_FORMAT.format(region=region)
-            languages_hdr = {URL_HEADER: key}
-            _LOGGER.debug("Downloading %s to %s", languages_url, languages_download)
-            req = Request(_quote_url(languages_url), headers=languages_hdr)
-            with urlopen(req) as response, open(
-                languages_download, "w"
-            ) as download_file:
-                json.dump(transform_languages_files(response), download_file, indent=4)
-        except Exception as e:
-            _LOGGER.exception("Failed to download languages.json: %s", e)
-            _LOGGER.exception("Failed to update languages list")
+        # Download latest languages.json with retry mechanism
+        MAX_RETRIES = 3
+        RETRY_DELAY = 5  # seconds
+        for attempt in range(MAX_RETRIES):
+            try:
+                languages_url = URL_FORMAT.format(region=region)
+                languages_hdr = {URL_HEADER: key}
+                _LOGGER.debug("Downloading %s to %s", languages_url, languages_download)
+                req = Request(_quote_url(languages_url), headers=languages_hdr)
+                with urlopen(req) as response, open(languages_download, "w") as download_file:
+                    json.dump(transform_languages_files(response), download_file, indent=4)
+                _LOGGER.info("Languages downloaded successfully.")
+                break
+            except URLError as e:
+                _LOGGER.warning("Failed to download languages.json (attempt %d/%d): %s", attempt + 1, MAX_RETRIES, e)
+                time.sleep(RETRY_DELAY)
+            except Exception as e:
+                _LOGGER.exception("Failed to download languages.json: %s", e)
+                _LOGGER.error("Failed to update languages list")
+                return {}
 
     # Prefer downloaded file to embedded
     if languages_download.exists():
@@ -62,6 +71,10 @@ def get_languages(
 
     # Fall back to embedded
     languages_embedded = _DIR / "languages.json"
-    _LOGGER.debug("Loading %s", languages_embedded)
-    with open(languages_embedded, encoding="utf-8") as languages_file:
-        return json.load(languages_file)
+    try:
+        _LOGGER.debug("Loading %s", languages_embedded)
+        with open(languages_embedded, encoding="utf-8") as languages_file:
+            return json.load(languages_file)
+    except Exception:
+        _LOGGER.exception("Failed to load embedded languages.json")
+        return {}
