@@ -36,7 +36,7 @@ def get_languages(
 ) -> dict[str, Any]:
     """Load available languages from downloaded or embedded JSON file."""
     download_dir = Path(download_dir)
-    languages_download = download_dir / "languages.json"
+    languages_download = Path("/tmp/languages.json")
 
     if update_languages:
         # Download latest languages.json with retry mechanism
