@@ -5,6 +5,7 @@ from functools import partial
 import contextlib
 import os  # Import to access environment variables
 import signal
+import re
 
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info
 from wyoming.server import AsyncServer
@@ -36,9 +37,9 @@ def parse_arguments():
 def validate_args(args):
     if not args.service_region or not args.subscription_key:
         raise ValueError("Both --service-region and --subscription-key must be provided either as command-line arguments or environment variables.")
-    # Simplified validation to avoid blocking valid keys
-    if len(args.subscription_key) < 20:
-        _LOGGER.warning("The subscription key does not match the expected length but will attempt to initialize.")
+    # Reinstate key validation with more flexibility to accommodate complex keys
+    if not re.match(r'^[A-Za-z0-9\-_]{40,}$', args.subscription_key):
+        _LOGGER.warning("The subscription key does not match the expected format but will attempt to initialize.")
 
 async def main() -> None:
     """Start Wyoming Microsoft STT server."""
