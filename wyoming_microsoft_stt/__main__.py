@@ -5,7 +5,7 @@ from functools import partial
 import contextlib
 import os  # Import to access environment variables
 import signal
-import re
+import sys
 
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info
 from wyoming.server import AsyncServer
@@ -22,6 +22,7 @@ stop_event = asyncio.Event()
 def handle_stop_signal(*args):
     _LOGGER.info("Received stop signal. Shutting down...")
     stop_event.set()
+    sys.exit(0)
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
