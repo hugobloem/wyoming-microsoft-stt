@@ -1,6 +1,5 @@
 import azure.cognitiveservices.speech as speechsdk  # noqa: D100
 import logging
-import re
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -12,12 +11,6 @@ class MicrosoftSTT:
         """Initialize."""
         self.args = args
         try:
-            # Simplify validation logic to focus on correct initialization
-            if not args.subscription_key:
-                _LOGGER.warning("No subscription key provided.")
-            else:
-                _LOGGER.debug(f"Using subscription key: {args.subscription_key}")
-
             self.speech_config = speechsdk.SpeechConfig(
                 subscription=args.subscription_key, region=args.service_region
             )
