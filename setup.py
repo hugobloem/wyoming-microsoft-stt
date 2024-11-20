@@ -18,7 +18,7 @@ data_files = [module_dir / "languages.json"]
 
 setup(
     name="wyoming_microsoft_stt",
-    version="1.0.7",
+    version="1.1.0",
     description="Wyoming Server for Microsoft STT",
     url="https://github.com/hugobloem/wyoming-microsoft-stt",
     author="Hugo Bloem",
