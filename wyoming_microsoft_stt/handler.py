@@ -45,15 +45,15 @@ class MicrosoftEventHandler(AsyncEventHandler):
         )
         self._language = self.cli_args.language
 
+        # Use /tmp for storing temporary files
         if not cli_args.debug:
             self._temp_dir = tempfile.TemporaryDirectory()
             output_dir = self._temp_dir.name
         else:
-            output_dir = "./tmp/"
+            output_dir = "/tmp/"
 
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        self.output_dir = output_dir
+        # Set output_dir without explicitly creating it
+        self.output_dir = Path(output_dir)
 
     async def handle_event(self, event: Event) -> bool:
         """Handle an event."""
