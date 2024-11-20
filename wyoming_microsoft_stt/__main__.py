@@ -95,3 +95,23 @@ async def main() -> None:
     # Load Microsoft STT model
     _LOGGER.debug("Loading Microsoft STT")
     stt_model = MicrosoftSTT(args)
+
+    # Initialize server and run
+    server = AsyncServer.from_uri(args.uri)
+    _LOGGER.info("Ready")
+    model_lock = asyncio.Lock()
+    await server.run(
+        partial(
+            MicrosoftEventHandler,
+            wyoming_info,
+            args,
+            stt_model,
+            model_lock,
+        )
+    )
+
+# -----------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    with contextlib.suppress(KeyboardInterrupt):
+        asyncio.run(main())
