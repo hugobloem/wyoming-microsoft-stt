@@ -13,7 +13,7 @@ class MicrosoftSTT:
         self.args = args
         try:
             if not re.match(r'^[a-fA-F0-9]{32}$', args.subscription_key):
-                raise ValueError("The subscription key does not appear to be valid.")
+                _LOGGER.warning("The subscription key does not match the expected format but will attempt to initialize.")
             self.speech_config = speechsdk.SpeechConfig(
                 subscription=args.subscription_key, region=args.service_region
             )
