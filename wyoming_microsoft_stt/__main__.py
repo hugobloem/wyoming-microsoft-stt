@@ -5,7 +5,6 @@ from functools import partial
 import contextlib
 import os  # Import to access environment variables
 import signal
-import sys
 import re
 
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info
@@ -21,10 +20,12 @@ _LOGGER = logging.getLogger(__name__)
 stop_event = asyncio.Event()
 
 def handle_stop_signal(*args):
+    """Handle shutdown signal and set the stop event."""
     _LOGGER.info("Received stop signal. Shutting down...")
     stop_event.set()
 
 def parse_arguments():
+    """Parse command-line arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--service-region", default=os.getenv("AZURE_SERVICE_REGION"), help="Microsoft Azure region (e.g., westus2)")
     parser.add_argument("--subscription-key", default=os.getenv("AZURE_SUBSCRIPTION_KEY"), help="Microsoft Azure subscription key")
@@ -36,6 +37,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def validate_args(args):
+    """Validate command-line arguments."""
     if not args.service_region or not args.subscription_key:
         raise ValueError("Both --service-region and --subscription-key must be provided either as command-line arguments or environment variables.")
     # Reinstate key validation with more flexibility to accommodate complex keys
