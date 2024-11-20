@@ -12,8 +12,8 @@ class MicrosoftSTT:
         """Initialize."""
         self.args = args
         try:
-            # Allow uppercase and lowercase hexadecimal characters in the subscription key
-            if not re.match(r'^[A-Fa-f0-9]{32}$', args.subscription_key):
+            # Allow more flexible subscription key validation to accommodate non-standard keys
+            if not re.match(r'^[A-Za-z0-9\-_]{32,}$', args.subscription_key):
                 _LOGGER.warning("The subscription key does not match the expected format but will attempt to initialize.")
             self.speech_config = speechsdk.SpeechConfig(
                 subscription=args.subscription_key, region=args.service_region
