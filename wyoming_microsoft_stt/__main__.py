@@ -6,6 +6,7 @@ import contextlib
 import os  # Import to access environment variables
 import signal
 import sys
+import re
 
 from wyoming.info import AsrModel, AsrProgram, Attribution, Info
 from wyoming.server import AsyncServer
