@@ -23,7 +23,6 @@ stop_event = asyncio.Event()
 def handle_stop_signal(*args):
     _LOGGER.info("Received stop signal. Shutting down...")
     stop_event.set()
-    sys.exit(0)
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -127,4 +126,3 @@ if __name__ == "__main__":
 
     with contextlib.suppress(KeyboardInterrupt):
         asyncio.run(main())
-        asyncio.run(stop_event.wait())  # Wait until we receive a stop signal
