@@ -30,7 +30,7 @@ def parse_arguments():
     parser.add_argument("--service-region", default=os.getenv("AZURE_SERVICE_REGION"), help="Microsoft Azure region (e.g., westus2)")
     parser.add_argument("--subscription-key", default=os.getenv("AZURE_SUBSCRIPTION_KEY"), help="Microsoft Azure subscription key")
     parser.add_argument("--uri", default="tcp://0.0.0.0:10300", help="unix:// or tcp://")
-    parser.add_argument("--download-dir", default="/tmp/", help="Directory to download languages.json into (default: /tmp/)")
+    parser.add_argument("--download-dir", default="/tmp/downloads/", help="Directory to download languages.json into (default: /tmp/downloads/)")
     parser.add_argument("--language", default="en-US", help="Default language to set for transcription")
     parser.add_argument("--update-languages", action="store_true", help="Download latest languages.json during startup")
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
