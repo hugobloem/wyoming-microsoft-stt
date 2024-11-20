@@ -1,5 +1,6 @@
 import azure.cognitiveservices.speech as speechsdk  # noqa: D100
 import logging
+import re
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -11,6 +12,8 @@ class MicrosoftSTT:
         """Initialize."""
         self.args = args
         try:
+            if not re.match(r'^[a-fA-F0-9]{32}$', args.subscription_key):
+                raise ValueError("The subscription key does not appear to be valid.")
             self.speech_config = speechsdk.SpeechConfig(
                 subscription=args.subscription_key, region=args.service_region
             )
