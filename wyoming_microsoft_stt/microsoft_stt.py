@@ -22,6 +22,8 @@ class MicrosoftSTT:
             _LOGGER.error(f"Failed to initialize Microsoft SpeechConfig: {e}")
             raise
 
+        self.set_profanity(self.args.profanity)
+
     def transcribe(self, filename: str, language=None):
         """Transcribe a file."""
         # Use the default language from args if no language is provided
@@ -61,3 +63,18 @@ class MicrosoftSTT:
         except Exception as e:
             _LOGGER.error(f"Failed to transcribe audio file {filename}: {e}")
             return ""
+
+    def set_profanity(self, profanity: str):
+        """Set the profanity filter level."""
+        if profanity == "off":
+            profanity_level = speechsdk.ProfanityOption.Raw
+        elif profanity == "masked":
+            profanity_level = speechsdk.ProfanityOption.Masked
+        elif profanity == "removed":
+            profanity_level = speechsdk.ProfanityOption.Removed
+        else:
+            _LOGGER.error(f"Invalid profanity level: {profanity}")
+            return
+
+        self.speech_config.set_profanity(profanity_level)
+        _LOGGER.debug(f"Profanity filter set to {profanity}")
