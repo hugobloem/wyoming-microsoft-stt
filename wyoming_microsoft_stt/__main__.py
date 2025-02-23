@@ -59,7 +59,7 @@ def parse_arguments():
     parser.add_argument(
         "--profanity",
         default="masked",
-        choices=["masked", "removed", "raw"],
+        choices=["masked", "removed", "off"],
         help="Profanity setting for speech recognition",
     )
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
