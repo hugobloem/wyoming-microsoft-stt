@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.2.0...v1.2.1) (2025-02-23)
+
+
+### 🐛 Bugfixes
+
+* profanity filter should be `off` not `raw` ([#71](https://github.com/hugobloem/wyoming-microsoft-stt/issues/71)) ([8727b1f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/8727b1fa06a58d239a341c59be3f8db5a101c8c9))
+
 ## [1.2.0](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.1.0...v1.2.0) (2025-02-23)
 
 
