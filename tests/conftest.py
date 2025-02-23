@@ -1,6 +1,6 @@
 """Fixtures for tests."""
 
-from types import SimpleNamespace
+from wyoming_microsoft_stt import SpeechConfig
 import pytest
 import os
 
@@ -8,7 +8,7 @@ import os
 @pytest.fixture
 def microsoft_stt_args():
     """Return MicrosoftSTT instance."""
-    args = SimpleNamespace(
+    args = SpeechConfig(
         subscription_key=os.environ.get("SPEECH_KEY"),
         service_region=os.environ.get("SPEECH_REGION"),
     )

@@ -1,5 +1,6 @@
 import azure.cognitiveservices.speech as speechsdk  # noqa: D100
 import logging
+from . import SpeechConfig
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -7,18 +8,21 @@ _LOGGER = logging.getLogger(__name__)
 class MicrosoftSTT:
     """Class to handle Microsoft STT."""
 
-    def __init__(self, args) -> None:
+    def __init__(self, speechconfig: SpeechConfig) -> None:
         """Initialize."""
-        self.args = args
+        self.args = speechconfig
+
         try:
             # Initialize the speech configuration with the provided subscription key and region
             self.speech_config = speechsdk.SpeechConfig(
-                subscription=args.subscription_key, region=args.service_region
+                subscription=self.args.subscription_key, region=self.args.service_region
             )
             _LOGGER.info("Microsoft SpeechConfig initialized successfully.")
         except Exception as e:
             _LOGGER.error(f"Failed to initialize Microsoft SpeechConfig: {e}")
             raise
+
+        self.set_profanity(self.args.profanity)
 
     def transcribe(self, filename: str, language=None):
         """Transcribe a file."""
@@ -48,10 +52,29 @@ class MicrosoftSTT:
                 return ""
             elif result.reason == speechsdk.ResultReason.Canceled:
                 cancellation_details = result.cancellation_details
-                _LOGGER.warning(f"Speech Recognition canceled: {cancellation_details.reason}")
+                _LOGGER.warning(
+                    f"Speech Recognition canceled: {cancellation_details.reason}"
+                )
                 if cancellation_details.reason == speechsdk.CancellationReason.Error:
-                    _LOGGER.error(f"Error details: {cancellation_details.error_details}")
+                    _LOGGER.error(
+                        f"Error details: {cancellation_details.error_details}"
+                    )
                 return ""
         except Exception as e:
             _LOGGER.error(f"Failed to transcribe audio file {filename}: {e}")
             return ""
+
+    def set_profanity(self, profanity: str):
+        """Set the profanity filter level."""
+        if profanity == "off":
+            profanity_level = speechsdk.ProfanityOption.Raw
+        elif profanity == "masked":
+            profanity_level = speechsdk.ProfanityOption.Masked
+        elif profanity == "removed":
+            profanity_level = speechsdk.ProfanityOption.Removed
+        else:
+            _LOGGER.error(f"Invalid profanity level: {profanity}")
+            return
+
+        self.speech_config.set_profanity(profanity_level)
+        _LOGGER.debug(f"Profanity filter set to {profanity}")
