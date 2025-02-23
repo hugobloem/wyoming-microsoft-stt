@@ -14,40 +14,82 @@ from .download import get_languages
 from .microsoft_stt import MicrosoftSTT
 from .handler import MicrosoftEventHandler
 from .version import __version__
+from . import SpeechConfig
 
 _LOGGER = logging.getLogger(__name__)
 
 stop_event = asyncio.Event()
+
 
 def handle_stop_signal(*args):
     """Handle shutdown signal and set the stop event."""
     _LOGGER.info("Received stop signal. Shutting down...")
     stop_event.set()
 
+
 def parse_arguments():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--service-region", default=os.getenv("AZURE_SERVICE_REGION"), help="Microsoft Azure region (e.g., westus2)")
-    parser.add_argument("--subscription-key", default=os.getenv("AZURE_SUBSCRIPTION_KEY"), help="Microsoft Azure subscription key")
-    parser.add_argument("--uri", default="tcp://0.0.0.0:10300", help="unix:// or tcp://")
-    parser.add_argument("--download-dir", default="/tmp/", help="Directory to download languages.json into (default: /tmp/)")
-    parser.add_argument("--language", default="en-US", help="Default language to set for transcription")
-    parser.add_argument("--update-languages", action="store_true", help="Download latest languages.json during startup")
+    parser.add_argument(
+        "--service-region",
+        default=os.getenv("AZURE_SERVICE_REGION"),
+        help="Microsoft Azure region (e.g., westus2)",
+    )
+    parser.add_argument(
+        "--subscription-key",
+        default=os.getenv("AZURE_SUBSCRIPTION_KEY"),
+        help="Microsoft Azure subscription key",
+    )
+    parser.add_argument(
+        "--uri", default="tcp://0.0.0.0:10300", help="unix:// or tcp://"
+    )
+    parser.add_argument(
+        "--download-dir",
+        default="/tmp/",
+        help="Directory to download languages.json into (default: /tmp/)",
+    )
+    parser.add_argument(
+        "--language", default="en-US", help="Default language to set for transcription"
+    )
+    parser.add_argument(
+        "--update-languages",
+        action="store_true",
+        help="Download latest languages.json during startup",
+    )
+    parser.add_argument(
+        "--profanity",
+        default="masked",
+        choices=["masked", "removed", "raw"],
+        help="Profanity setting for speech recognition",
+    )
     parser.add_argument("--debug", action="store_true", help="Log DEBUG messages")
     return parser.parse_args()
+
 
 def validate_args(args):
     """Validate command-line arguments."""
     if not args.service_region or not args.subscription_key:
-        raise ValueError("Both --service-region and --subscription-key must be provided either as command-line arguments or environment variables.")
+        raise ValueError(
+            "Both --service-region and --subscription-key must be provided either as command-line arguments or environment variables."
+        )
     # Reinstate key validation with more flexibility to accommodate complex keys
-    if not re.match(r'^[A-Za-z0-9\-_]{40,}$', args.subscription_key):
-        _LOGGER.warning("The subscription key does not match the expected format but will attempt to initialize.")
+    if not re.match(r"^[A-Za-z0-9\-_]{40,}$", args.subscription_key):
+        _LOGGER.warning(
+            "The subscription key does not match the expected format but will attempt to initialize."
+        )
+
 
 async def main() -> None:
     """Start Wyoming Microsoft STT server."""
     args = parse_arguments()
     validate_args(args)
+
+    speech_config = SpeechConfig(
+        subscription_key=args.subscription_key,
+        service_region=args.service_region,
+        profanity=args.profanity,
+        language=args.language,
+    )
 
     # Set up logging
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
@@ -98,7 +140,7 @@ async def main() -> None:
     # Load Microsoft STT model
     try:
         _LOGGER.debug("Loading Microsoft STT")
-        stt_model = MicrosoftSTT(args)
+        stt_model = MicrosoftSTT(speech_config)
         _LOGGER.info("Microsoft STT model loaded successfully.")
     except Exception as e:
         _LOGGER.error(f"Failed to load Microsoft STT model: {e}")
@@ -120,6 +162,7 @@ async def main() -> None:
         )
     except Exception as e:
         _LOGGER.error(f"An error occurred while running the server: {e}")
+
 
 if __name__ == "__main__":
     # Set up signal handling for graceful shutdown
