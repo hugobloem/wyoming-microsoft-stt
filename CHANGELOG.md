@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.1.0...v1.2.0) (2025-02-23)
+
+
+### 🚀 Features
+
+* add profanity filter ([35a8a25](https://github.com/hugobloem/wyoming-microsoft-stt/commit/35a8a251751bf8d0828c3ec9af74ef5dbb621f18))
+
+
+### 🔨 Code Refactoring
+
+* use Pydantic model for Microsoft STT configuration ([35a8a25](https://github.com/hugobloem/wyoming-microsoft-stt/commit/35a8a251751bf8d0828c3ec9af74ef5dbb621f18))
+
 ## [1.1.0](https://github.com/hugobloem/wyoming-microsoft-stt/compare/1.0.7...v1.1.0) (2024-11-20)
 
 
