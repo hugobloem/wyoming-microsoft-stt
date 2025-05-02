@@ -39,7 +39,7 @@ async def test_transcribe() -> None:
         "--uri",
         "stdio://",
         "--language",
-        "en-US",
+        "en-GB",
         "--service-region",
         os.environ.get("SPEECH_REGION"),
         "--subscription-key",
