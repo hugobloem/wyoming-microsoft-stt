@@ -40,9 +40,6 @@ class MicrosoftSTT:
         language=None,
     ) -> None:
         """Begin a transcription."""
-        # Use the default language from args if no language is provided
-        if language is None:
-            language = self.args.language
         _LOGGER.debug(f"Starting transcription with language: {language}")
 
         # Configure audio input for speech recognition
@@ -58,8 +55,8 @@ class MicrosoftSTT:
         # Create a speech recognizer with the configured speech and audio settings
         self._speech_recognizer = speechsdk.SpeechRecognizer(
             speech_config=self.speech_config,
-            language=language,
             audio_config=audio_config,
+            **self.get_language(language),
         )
         self.recognition_done = threading.Event()
 
@@ -113,6 +110,24 @@ class MicrosoftSTT:
         except Exception as e:
             _LOGGER.error(f"Failed to transcribe audio: {e}")
             return ""
+
+    def get_language(self, language: str) -> dict:
+        """Get the language code."""
+        if len(self.args.language) > 1:
+            auto_detect_source_language_config = (
+                speechsdk.languageconfig.AutoDetectSourceLanguageConfig(
+                    languages=self.args.language
+                )
+            )
+            return {
+                "auto_detect_source_language_config": auto_detect_source_language_config
+            }
+
+        if language:
+            _LOGGER.debug(f"Language set to {language}")
+            return {"language": language}
+
+        return {"language": self.args.language[0]}
 
     def set_profanity(self, profanity: str):
         """Set the profanity filter level."""

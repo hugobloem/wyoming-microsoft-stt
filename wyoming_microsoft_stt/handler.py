@@ -36,7 +36,12 @@ class MicrosoftEventHandler(AsyncEventHandler):
         self.model = model
         self.model_lock = model_lock
 
-        self._language = self.cli_args.language
+        if len(self.cli_args.language) > 1:
+            _LOGGER.warning(
+                f"Multiple languages specified, auto-detection will be used for these languages only: {self.cli_args.language}"
+            )
+
+        self._language = self.cli_args.language[0]
 
     async def handle_event(self, event: Event) -> bool:
         """Handle an event."""
