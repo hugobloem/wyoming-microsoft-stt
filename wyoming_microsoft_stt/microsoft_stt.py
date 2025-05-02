@@ -1,3 +1,6 @@
+"""Microsoft STT module for Wyoming."""
+
+import threading
 from typing import Optional
 import azure.cognitiveservices.speech as speechsdk  # noqa: D100
 import logging
@@ -40,8 +43,10 @@ class MicrosoftSTT:
         # Use the default language from args if no language is provided
         if language is None:
             language = self.args.language
+        _LOGGER.debug(f"Starting transcription with language: {language}")
 
         # Configure audio input for speech recognition
+        _LOGGER.debug("Configuring audio input stream...")
         self._stream = speechsdk.audio.PushAudioInputStream(
             stream_format=speechsdk.audio.AudioStreamFormat(
                 samples_per_second=samples_per_second,
@@ -56,30 +61,46 @@ class MicrosoftSTT:
             language=language,
             audio_config=audio_config,
         )
+        self.recognition_done = threading.Event()
 
         self._results = []
 
-        if self.args.realtime:
+        def session_stopped_cb(evt):
+            """Signal to stop continuous recognition upon receiving an event `evt`."""
+            _LOGGER.debug(f"SESSION STOPPED: {evt}")
+            self.recognition_done.set()
 
-            def recognized(event: speechsdk.SpeechRecognitionEventArgs):
-                _LOGGER.debug("{}".format(event.result))
-                self._results.append(event.result)
+        self._speech_recognizer.recognizing.connect(
+            lambda evt: _LOGGER.debug(f"RECOGNIZING: {evt}")
+        )
+        self._speech_recognizer.recognized.connect(
+            lambda evt: _LOGGER.debug(f"RECOGNIZED: {evt}")
+        )
+        self._speech_recognizer.session_started.connect(
+            lambda evt: _LOGGER.debug(f"SESSION STARTED: {evt}")
+        )
+        self._speech_recognizer.session_stopped.connect(session_stopped_cb)
+        self._speech_recognizer.canceled.connect(
+            lambda evt: _LOGGER.debug(f"CANCELED {evt}")
+        )
 
-            self._speech_recognizer.start_continuous_recognition()
-            self._speech_recognizer.recognized.connect(recognized)
+        _LOGGER.debug("Starting continuous recognition...")
+
+        def recognized(event: speechsdk.SpeechRecognitionEventArgs):
+            _LOGGER.debug(f"{event.result}")
+            self._results.append(event.result)
+
+        self._speech_recognizer.start_continuous_recognition()
+        self._speech_recognizer.recognized.connect(recognized)
 
     def push_audio_chunk(self, chunk: bytes):
+        """Push an audio chunk to the recognizer."""
         self._stream.write(chunk)
 
     def transcribe(self):
         """Get the results of a transcription."""
         try:
-            if self.args.realtime:
-                self._speech_recognizer.stop_continuous_recognition()
-            else:
-                result = self._speech_recognizer.recognize_once()
-                _LOGGER.debug("{}".format(result))
-                self._results.append(result)
+            self._speech_recognizer.stop_continuous_recognition()
 
             return "\n".join(
                 [

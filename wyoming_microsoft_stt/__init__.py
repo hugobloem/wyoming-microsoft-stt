@@ -11,4 +11,3 @@ class SpeechConfig(BaseModel):
     service_region: str
     profanity: Literal["off", "masked", "removed"] = "masked"
     language: str = "en-US"
-    realtime: bool = True
