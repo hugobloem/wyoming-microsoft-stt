@@ -30,7 +30,7 @@ _TRANSCRIBE_TIMEOUT = 60
 
 
 @pytest.mark.asyncio
-async def test_transcribe() -> None:
+async def test_multilanguage() -> None:
     """Test the transcription."""
     proc = await asyncio.create_subprocess_exec(
         sys.executable,
@@ -40,6 +40,7 @@ async def test_transcribe() -> None:
         "stdio://",
         "--language",
         "en-GB",
+        "nl-NL",
         "--service-region",
         os.environ.get("SPEECH_REGION"),
         "--subscription-key",
@@ -69,7 +70,7 @@ async def test_transcribe() -> None:
         break
 
     # Test known WAV
-    with wave.open(str(_DIR / "hello_world.wav"), "rb") as example_wav:
+    with wave.open(str(_DIR / "zet_het_licht_aan.wav"), "rb") as example_wav:
         await async_write_event(
             AudioStart(
                 rate=example_wav.getframerate(),
@@ -98,7 +99,7 @@ async def test_transcribe() -> None:
         _LOGGER.info(f"Received transcript: {transcript.text}")
         text = transcript.text.lower().strip()
         text = re.sub(r"[^a-z ]", "", text)
-        assert text == "hello world"
+        assert text == "zet het licht aan"
         break
 
     # Need to close stdin for graceful termination

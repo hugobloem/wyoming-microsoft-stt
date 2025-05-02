@@ -49,7 +49,10 @@ def parse_arguments():
         help="Directory to download languages.json into (default: /tmp/)",
     )
     parser.add_argument(
-        "--language", default="en-US", help="Default language to set for transcription"
+        "--language",
+        nargs="+",
+        default=["en-GB"],
+        help="List of languages to set for transcription (e.g., en-US fr-FR es-ES)",
     )
     parser.add_argument(
         "--update-languages",
