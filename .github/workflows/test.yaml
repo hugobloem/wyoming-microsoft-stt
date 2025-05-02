@@ -33,7 +33,7 @@ jobs:
     - name: "Install dependencies"
       run: |
         python3 -m pip install uv
-        python3 -m uv pip install . pytest
+        python3 -m uv pip install . pytest pytest-asyncio
 
     - name: "Test with pytest"    
       run: |

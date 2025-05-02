@@ -2,37 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug __main__",
-            "type": "python",
+            "name": "Debug STT",
+            "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/wyoming-microsoft-stt/__main__.py",
+            "module": "wyoming_microsoft_stt",
             "console": "integratedTerminal",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}",
             },
             "args": [
-                "--download-dir", "./temp/",
-                "--service-region", "uksouth",
-                "--update-languages", 
+                "--download-dir",
+                "./temp/",
+                "--service-region",
+                "canadacentral",
+                "--profanity",
+                "off",
+                "--update-languages",
                 "--debug",
-                "--uri", "tcp://0.0.0.0:10300"
+                "--uri",
+                "tcp://0.0.0.0:10300"
             ]
         },
-        {
-            "name": "Debug microsoft_stt.py",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/microsoft_stt.py",
-            "console": "integratedTerminal",
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}",
-            },
-            "args": [
-                "--voice", "en-GB-SoniaNeural",
-                "--service-region", "uksouth", 
-                "--output-dir", "./temp/",
-                "--debug"
-            ]
-        }
     ]
 }

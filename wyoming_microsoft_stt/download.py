@@ -1,4 +1,5 @@
 """Utility for downloading Microsoft STT languages."""
+
 import logging
 from pathlib import Path
 from typing import Any, Union
@@ -36,7 +37,9 @@ def get_languages(
 ) -> dict[str, Any]:
     """Load available languages from downloaded or embedded JSON file."""
     download_dir = Path(download_dir)
-    languages_download = Path("/tmp/languages.json")
+    if not download_dir.exists():
+        download_dir.mkdir(parents=True)
+    languages_download = download_dir.joinpath("languages.json")
 
     if update_languages:
         # Download latest languages.json with retry mechanism
@@ -48,12 +51,21 @@ def get_languages(
                 languages_hdr = {URL_HEADER: key}
                 _LOGGER.debug("Downloading %s to %s", languages_url, languages_download)
                 req = Request(_quote_url(languages_url), headers=languages_hdr)
-                with urlopen(req) as response, open(languages_download, "w") as download_file:
-                    json.dump(transform_languages_files(response), download_file, indent=4)
+                with urlopen(req) as response, open(
+                    languages_download, "w"
+                ) as download_file:
+                    json.dump(
+                        transform_languages_files(response), download_file, indent=4
+                    )
                 _LOGGER.info("Languages downloaded successfully.")
                 break
             except URLError as e:
-                _LOGGER.warning("Failed to download languages.json (attempt %d/%d): %s", attempt + 1, MAX_RETRIES, e)
+                _LOGGER.warning(
+                    "Failed to download languages.json (attempt %d/%d): %s",
+                    attempt + 1,
+                    MAX_RETRIES,
+                    e,
+                )
                 time.sleep(RETRY_DELAY)
             except Exception as e:
                 _LOGGER.exception("Failed to download languages.json: %s", e)
