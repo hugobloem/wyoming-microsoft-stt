@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.3.0](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.2.1...v1.3.0) (2025-05-03)
+
+
+### 🚀 Features
+
+* Add multilingual support for transcription ([#77](https://github.com/hugobloem/wyoming-microsoft-stt/issues/77)) ([e4d25cb](https://github.com/hugobloem/wyoming-microsoft-stt/commit/e4d25cb8223852faff476a540db9709a654b31c1))
+* Use real-time STT [@nuzayets](https://github.com/nuzayets) ([8f5c0f2](https://github.com/hugobloem/wyoming-microsoft-stt/commit/8f5c0f2c37e97e13ba9fe190a6ada86a6acff4cd))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump azure-cognitiveservices-speech from 1.42.0 to 1.43.0 ([#74](https://github.com/hugobloem/wyoming-microsoft-stt/issues/74)) ([29c9c00](https://github.com/hugobloem/wyoming-microsoft-stt/commit/29c9c00af63e65dc467a796de4d570905cf74184))
+
+
+### 👷 Continuous Integration
+
+* reduce python versions in test ([#75](https://github.com/hugobloem/wyoming-microsoft-stt/issues/75)) ([036c83a](https://github.com/hugobloem/wyoming-microsoft-stt/commit/036c83a6515bb075a606183b3e0922b463ee0d1e))
+* run release please on-demand ([#78](https://github.com/hugobloem/wyoming-microsoft-stt/issues/78)) ([d5094f5](https://github.com/hugobloem/wyoming-microsoft-stt/commit/d5094f58b6996087b448f854225b48c0bd3abecc))
+
 ## [1.2.1](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.2.0...v1.2.1) (2025-02-23)
 
 
