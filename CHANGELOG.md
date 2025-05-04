@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.1](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.0...v1.3.1) (2025-05-04)
+
+
+### 🐛 Bugfixes
+
+* stop stream when last chunk is sent ([#79](https://github.com/hugobloem/wyoming-microsoft-stt/issues/79)) ([4eba565](https://github.com/hugobloem/wyoming-microsoft-stt/commit/4eba5650fa92bb9cc3e7448617412cd82ed861b4))
+
+
+### 📝 Documentation
+
+* add multi-language description ([#83](https://github.com/hugobloem/wyoming-microsoft-stt/issues/83)) ([2875b2c](https://github.com/hugobloem/wyoming-microsoft-stt/commit/2875b2ccce2db734572f8cd890488d588d6c17c8))
+
+
+### 🔧 Miscellaneous Chores
+
+* **main:** release 1.3.1 ([#80](https://github.com/hugobloem/wyoming-microsoft-stt/issues/80)) ([f6d86ec](https://github.com/hugobloem/wyoming-microsoft-stt/commit/f6d86ec043422cb3444f53832a5e92bf5378c801))
+
 ## [1.3.0](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.2.1...v1.3.0) (2025-05-03)
 
 
