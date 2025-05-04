@@ -14,6 +14,31 @@ If you have not set up a speech resource, you can follow the instructions below.
 4. Select the subscription you created, pick or create a resource group, select a region, pick an identifiable name, and select the pricing tier (you probably want Free F0)
 5. Once created, copy one of the keys from the speech service page. You will need this to run this program.
 
+## Usage
+Depending on the installation method parameters are parsed differently. However, the same options are used for each of the installation methods and can be found in the table below. Your service region and subscription key can be found on the speech service resource page (step 5 the Azure Speech service instructions).
+
+For the bare-metal Python install the program is run as follows:
+```python
+python -m wyoming-microsoft-stt --<key> <value>
+```
+
+| Key | Optional | Description |
+|---|---|---|
+| `service-region` | No | Azure service region e.g., `uksouth` |
+| `subscription-key` | No | Azure subscription key |
+| `language` | Yes | Default language to set for transcription, default: `en-GB`. For auto-detection provide multiple languages. |
+| `uri` | No | Uri where the server will be broadcasted e.g., `tcp://0.0.0.0:10300` |
+| `download-dir` | Yes | Directory to download models into (default: ) |
+| `update-languages` | Yes | Download latest languages.json during startup |
+| `debug` | Yes | Log debug messages |
+
+## Multi-language support
+This add-on can also auto-detect the spoken language from a list of pre-defined languages (max. 10). To do this in Home Assistant provide the languages separated by semi-colons like so:
+<img width="689" alt="Screenshot 2025-05-04 at 11 59 55" src="https://github.com/user-attachments/assets/b3c54fe5-ebf3-404a-a8e8-b0d27efaf76d" />
+
+> [!NOTE]
+> Setting multiple languages will override the options set by Home Assistant's Voice configuration! It will prompt you to select a language but the option is ignored when speech is processed.
+
 
 ## Installation
 Depending on your use case there are different installation options.
@@ -36,21 +61,3 @@ Depending on your use case there are different installation options.
   docker run ghcr.io/hugobloem/wyoming-microsoft-stt-noha:latest --<key> <value>
   ```
   For the relevant keys please look at [the table below](#usage)
-
-## Usage
-Depending on the installation method parameters are parsed differently. However, the same options are used for each of the installation methods and can be found in the table below. Your service region and subscription key can be found on the speech service resource page (step 5 the Azure Speech service instructions).
-
-For the bare-metal Python install the program is run as follows:
-```python
-python -m wyoming-microsoft-stt --<key> <value>
-```
-
-| Key | Optional | Description |
-|---|---|---|
-| `service-region` | No | Azure service region e.g., `uksouth` |
-| `subscription-key` | No | Azure subscription key |
-| `uri` | No | Uri where the server will be broadcasted e.g., `tcp://0.0.0.0:10300` |
-| `download-dir` | Yes | Directory to download models into (default: ) |
-| `language` | Yes | Default language to set for transcription, default: `en-GB` |
-| `update-languages` | Yes | Download latest languages.json during startup |
-| `debug` | Yes | Log debug messages |
