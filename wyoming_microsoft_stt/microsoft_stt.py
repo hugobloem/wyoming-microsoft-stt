@@ -1,6 +1,6 @@
 """Microsoft STT module for Wyoming."""
 
-import threading
+import time
 from typing import Optional
 import azure.cognitiveservices.speech as speechsdk  # noqa: D100
 import logging
@@ -58,14 +58,13 @@ class MicrosoftSTT:
             audio_config=audio_config,
             **self.get_language(language),
         )
-        self.recognition_done = threading.Event()
 
-        self._results = []
+        self.recognition_done = False
 
         def session_stopped_cb(evt):
             """Signal to stop continuous recognition upon receiving an event `evt`."""
             _LOGGER.debug(f"SESSION STOPPED: {evt}")
-            self.recognition_done.set()
+            self.recognition_done = True
 
         self._speech_recognizer.recognizing.connect(
             lambda evt: _LOGGER.debug(f"RECOGNIZING: {evt}")
@@ -85,27 +84,32 @@ class MicrosoftSTT:
 
         def recognized(event: speechsdk.SpeechRecognitionEventArgs):
             _LOGGER.debug(f"{event.result}")
-            self._results.append(event.result)
+            self._results = event.result
 
         self._speech_recognizer.start_continuous_recognition()
         self._speech_recognizer.recognized.connect(recognized)
 
-    def push_audio_chunk(self, chunk: bytes):
+    def push_audio_chunk(self, chunk: bytes) -> None:
         """Push an audio chunk to the recognizer."""
         self._stream.write(chunk)
+
+    def stop_audio_chunk(self) -> None:
+        """Stop the transcription."""
+        _LOGGER.debug("Stopping transcription...")
+        self._stream.close()
 
     def transcribe(self):
         """Get the results of a transcription."""
         try:
+            self.stop_audio_chunk()
+
+            # Wait for the recognition to finish
+            while not self.recognition_done:
+                time.sleep(0.01)
+
             self._speech_recognizer.stop_continuous_recognition()
 
-            return "\n".join(
-                [
-                    result.text
-                    for result in self._results
-                    if result.reason == speechsdk.ResultReason.RecognizedSpeech
-                ]
-            )
+            return self._results.text
 
         except Exception as e:
             _LOGGER.error(f"Failed to transcribe audio: {e}")
