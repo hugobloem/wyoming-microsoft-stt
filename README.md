@@ -61,3 +61,19 @@ Depending on your use case there are different installation options.
   docker run ghcr.io/hugobloem/wyoming-microsoft-stt-noha:latest --<key> <value>
   ```
   For the relevant keys please look at [the table below](#usage)
+
+- **docker compose**
+
+  Below is a sample for a docker compose file. The azure region + subscription key can be set in environmentvariables. Everything else needs to be passed via command line arguments.
+  
+  ```yaml
+  wyoming-proxy-azure-stt:
+    image: ghcr.io/hugobloem/wyoming-microsoft-stt-noha
+    container_name: wyoming-azure-stt
+    ports:
+      - "10300:10300"
+    environment:
+      AZURE_SERVICE_REGION: swedencentral
+      AZURE_SUBSCRIPTION_KEY: XXX
+    command: --language=en-GB,nl-NL --uri=tcp://0.0.0.0:10300
+  ```
