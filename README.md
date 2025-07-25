@@ -64,7 +64,7 @@ Depending on your use case there are different installation options.
 
 - **docker compose**
 
-  Below is a sample for a docker compose file. The azure region + subscription key can be set in environmentvariables. Everything else needs to be passed via command line arguments.
+  Below is a sample for a docker compose file. The azure region + subscription key can be set in environment variables. Everything else needs to be passed via command line arguments.
   
   ```yaml
   wyoming-proxy-azure-stt:
