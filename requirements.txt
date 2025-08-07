@@ -1,4 +1,4 @@
 wyoming==1.7.2
-azure-cognitiveservices-speech==1.44.0
+azure-cognitiveservices-speech==1.45.0
 ruff
 pydantic>=2,<3
