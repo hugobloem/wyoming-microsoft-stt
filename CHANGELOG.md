@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.2](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.1...v1.3.2) (2025-08-07)
+
+
+### 📝 Documentation
+
+* update docker compose readme @DOliana ([4cd4efb](https://github.com/hugobloem/wyoming-microsoft-stt/commit/4cd4efb5e3c38e8670568fc6b69807342027458e))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump azure-cognitiveservices-speech from 1.43.0 to 1.44.0 ([#85](https://github.com/hugobloem/wyoming-microsoft-stt/issues/85)) ([1f51a24](https://github.com/hugobloem/wyoming-microsoft-stt/commit/1f51a2446287f54e076695fd55c01c94897448d1))
+* bump azure-cognitiveservices-speech from 1.44.0 to 1.45.0 ([#88](https://github.com/hugobloem/wyoming-microsoft-stt/issues/88)) ([ef01cb6](https://github.com/hugobloem/wyoming-microsoft-stt/commit/ef01cb6e354fe5f9b4112f4efa0e0ed197b54b52))
+* bump wyoming from 1.6.0 to 1.7.1 ([#86](https://github.com/hugobloem/wyoming-microsoft-stt/issues/86)) ([4d82bfc](https://github.com/hugobloem/wyoming-microsoft-stt/commit/4d82bfc24b9d0a7735a213ec74eee00708b49848))
+* bump wyoming from 1.7.1 to 1.7.2 ([#90](https://github.com/hugobloem/wyoming-microsoft-stt/issues/90)) ([d836a9e](https://github.com/hugobloem/wyoming-microsoft-stt/commit/d836a9e79fb4b3d794c915df90c071559ad74b04))
+
 ## [1.3.1](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.0...v1.3.1) (2025-05-04)
 
 
