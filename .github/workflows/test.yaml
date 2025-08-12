@@ -23,7 +23,7 @@ jobs:
         sudo apt-get install build-essential ca-certificates libasound2-dev libssl-dev wget
         
     - name: "Checkout the repository"
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Set up Python
       uses: actions/setup-python@v5
