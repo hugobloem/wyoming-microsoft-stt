@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.3](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.2...v1.3.3) (2025-08-23)
+
+
+### 🏗️ Maintenance
+
+* Migrate to pyproject.toml and update Python setup ([#93](https://github.com/hugobloem/wyoming-microsoft-stt/issues/93)) ([c7677b4](https://github.com/hugobloem/wyoming-microsoft-stt/commit/c7677b4e8bd500ef1e3e2f1de274b979a27a0ce5))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump actions/checkout from 4 to 5 ([#91](https://github.com/hugobloem/wyoming-microsoft-stt/issues/91)) ([cd3724d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/cd3724d024a1452f7f3b833623be980e62db14fd))
+
 ## [1.3.2](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.1...v1.3.2) (2025-08-07)
 
 
