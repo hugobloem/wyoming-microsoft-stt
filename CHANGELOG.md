@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.3...v1.3.4) (2025-08-23)
+
+
+### 👷 Continuous Integration
+
+* publish package to PyPi ([063106f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/063106f1ab904ffaa04ea80191b3f36311f225e7))
+
 ## [1.3.3](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.2...v1.3.3) (2025-08-23)
 
 
