@@ -12,6 +12,29 @@
 
 * bump actions/checkout from 4 to 5 ([#91](https://github.com/hugobloem/wyoming-microsoft-stt/issues/91)) ([cd3724d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/cd3724d024a1452f7f3b833623be980e62db14fd))
 * **main:** release 1.3.3 ([#92](https://github.com/hugobloem/wyoming-microsoft-stt/issues/92)) ([a7f14fa](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a7f14fa1b3b8ef6638a44787c5e6318daeeea051))
+* **main:** release 1.3.3 ([#95](https://github.com/hugobloem/wyoming-microsoft-stt/issues/95)) ([01c777e](https://github.com/hugobloem/wyoming-microsoft-stt/commit/01c777eeb7ea54548a60f19bff12cd583280f826))
+* **main:** release 1.3.4 ([#94](https://github.com/hugobloem/wyoming-microsoft-stt/issues/94)) ([a6a74dd](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a6a74ddfe8d8a9ea5bdedecbb6a663e7c86f66f5))
+* revert version ([1addc18](https://github.com/hugobloem/wyoming-microsoft-stt/commit/1addc1855b300deeaf4a2f93fe3d16c5a2bb2101))
+
+
+### 👷 Continuous Integration
+
+* Change trigger from release to push for tags ([74fb20f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/74fb20f78c5095e61ec233cd77893870e31cc23b))
+* fix publish ([9603021](https://github.com/hugobloem/wyoming-microsoft-stt/commit/9603021a857d9d735cebff5ca34a3195d3b334c0))
+* publish package to PyPi ([063106f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/063106f1ab904ffaa04ea80191b3f36311f225e7))
+
+## [1.3.3](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.2...v1.3.3) (2025-08-23)
+
+
+### 🏗️ Maintenance
+
+* Migrate to pyproject.toml and update Python setup ([#93](https://github.com/hugobloem/wyoming-microsoft-stt/issues/93)) ([c7677b4](https://github.com/hugobloem/wyoming-microsoft-stt/commit/c7677b4e8bd500ef1e3e2f1de274b979a27a0ce5))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump actions/checkout from 4 to 5 ([#91](https://github.com/hugobloem/wyoming-microsoft-stt/issues/91)) ([cd3724d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/cd3724d024a1452f7f3b833623be980e62db14fd))
+* **main:** release 1.3.3 ([#92](https://github.com/hugobloem/wyoming-microsoft-stt/issues/92)) ([a7f14fa](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a7f14fa1b3b8ef6638a44787c5e6318daeeea051))
 * **main:** release 1.3.4 ([#94](https://github.com/hugobloem/wyoming-microsoft-stt/issues/94)) ([a6a74dd](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a6a74ddfe8d8a9ea5bdedecbb6a663e7c86f66f5))
 * revert version ([1addc18](https://github.com/hugobloem/wyoming-microsoft-stt/commit/1addc1855b300deeaf4a2f93fe3d16c5a2bb2101))
 
