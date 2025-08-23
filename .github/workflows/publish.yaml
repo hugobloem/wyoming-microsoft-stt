@@ -1,27 +1,28 @@
 name: Publish Package
 
 on:
-    release:
-        types: [published]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        environment: pypi
-        permissions:
-          id-token: write
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+    steps:
+     - name: Checkout code
+       uses: actions/checkout@v4
 
-            - name: "Set up Python"
-              uses: astral-sh/setup-uv@v6
-              with:
-                enable-cache: true
+     - name: "Set up Python"
+       uses: astral-sh/setup-uv@v6
+       with:
+         enable-cache: true
 
-            - name: "Build"
-              run: uv build
+     - name: "Build"
+       run: uv build
 
-            - name: "Publish"
-              run: uv publish
+     - name: "Publish"
+       run: uv publish
