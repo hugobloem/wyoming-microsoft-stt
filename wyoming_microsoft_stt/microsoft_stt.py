@@ -1,7 +1,6 @@
 """Microsoft STT module for Wyoming."""
 
 import time
-from typing import Optional
 import azure.cognitiveservices.speech as speechsdk  # noqa: D100
 import logging
 from . import SpeechConfig
@@ -16,8 +15,8 @@ class MicrosoftSTT:
         """Initialize."""
         self.args = speechconfig
 
-        self._stream = Optional[speechsdk.audio.PushAudioInputStream]
-        self._speech_recognizer: Optional[speechsdk.SpeechRecognizer]
+        self._stream: speechsdk.audio.PushAudioInputStream | None = None
+        self._speech_recognizer: speechsdk.SpeechRecognizer | None = None
         self._results: list[speechsdk.SpeechRecognitionResult] = []
 
         try:
