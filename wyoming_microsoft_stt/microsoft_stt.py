@@ -17,7 +17,7 @@ class MicrosoftSTT:
 
         self._stream: speechsdk.audio.PushAudioInputStream | None = None
         self._speech_recognizer: speechsdk.SpeechRecognizer | None = None
-        self._results: list[speechsdk.SpeechRecognitionResult] = []
+        self._results: speechsdk.SpeechRecognitionResult | None = None
 
         try:
             # Initialize the speech configuration with the provided subscription key and region
@@ -90,6 +90,7 @@ class MicrosoftSTT:
 
     def push_audio_chunk(self, chunk: bytes) -> None:
         """Push an audio chunk to the recognizer."""
+        _LOGGER.debug(f"Pushing audio chunk of size {len(chunk)} bytes...")
         self._stream.write(chunk)
 
     def stop_audio_chunk(self) -> None:
@@ -108,13 +109,17 @@ class MicrosoftSTT:
 
             self._speech_recognizer.stop_continuous_recognition()
 
+            if self._results is None:
+                _LOGGER.debug("No results from transcription.")
+                return ""
+
             return self._results.text
 
         except Exception as e:
             _LOGGER.error(f"Failed to transcribe audio: {e}")
             return ""
 
-    def get_language(self, language: str) -> dict:
+    def get_language(self, language: None | str) -> dict:
         """Get the language code."""
         if len(self.args.language) > 1:
             auto_detect_source_language_config = (
