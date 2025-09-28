@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.4](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.3...v1.3.4) (2025-09-28)
+
+
+### 🧪 Tests
+
+* repair broken test ([#101](https://github.com/hugobloem/wyoming-microsoft-stt/issues/101)) ([da1bdcf](https://github.com/hugobloem/wyoming-microsoft-stt/commit/da1bdcf76931e322b806f6d1d88a4105c260a7ae))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump actions/checkout from 4 to 5 ([#97](https://github.com/hugobloem/wyoming-microsoft-stt/issues/97)) ([651f54e](https://github.com/hugobloem/wyoming-microsoft-stt/commit/651f54e2b72fba77b2493382b3e94206f89ad551))
+* bump azure-cognitiveservices-speech from 1.45.0 to 1.46.0 ([#99](https://github.com/hugobloem/wyoming-microsoft-stt/issues/99)) ([8eec069](https://github.com/hugobloem/wyoming-microsoft-stt/commit/8eec0690fa413567cbd4b5da9581b5f7c9e67034))
+
 ## [1.3.3](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.2...v1.3.3) (2025-08-23)
 
 
