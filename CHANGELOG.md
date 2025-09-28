@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.5](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.4...v1.3.5) (2025-09-28)
+
+
+### 🐛 Bugfixes
+
+* ensure graceful shutdown by exiting after stop signal ([#105](https://github.com/hugobloem/wyoming-microsoft-stt/issues/105)) ([a8e2a2f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a8e2a2f7d1e4f8af60ca16be362b0c926a4fe727))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump pydantic from 2.11.7 to 2.11.9 ([#104](https://github.com/hugobloem/wyoming-microsoft-stt/issues/104)) ([9fd6e09](https://github.com/hugobloem/wyoming-microsoft-stt/commit/9fd6e09116f6565980d90972b6f6d73f50e96c57))
+* bump pytest from 8.4.1 to 8.4.2 ([#106](https://github.com/hugobloem/wyoming-microsoft-stt/issues/106)) ([d7161ab](https://github.com/hugobloem/wyoming-microsoft-stt/commit/d7161abe247c6c0a2cca97712847f92eb349fa1a))
+* bump pytest-asyncio from 1.1.0 to 1.2.0 ([#108](https://github.com/hugobloem/wyoming-microsoft-stt/issues/108)) ([9e60b02](https://github.com/hugobloem/wyoming-microsoft-stt/commit/9e60b029a380e816059eeeedb4fbdd335e8c9de1))
+* bump ruff from 0.12.10 to 0.13.2 ([#107](https://github.com/hugobloem/wyoming-microsoft-stt/issues/107)) ([1b22eb5](https://github.com/hugobloem/wyoming-microsoft-stt/commit/1b22eb5b75b8fea1afce175ccfeb056f565f0709))
+* improve debug logging ([ae3055f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/ae3055fefa20a38974a83db3f0f9fdd4c8097958))
+* move to uv completely ([#102](https://github.com/hugobloem/wyoming-microsoft-stt/issues/102)) ([bcb06c5](https://github.com/hugobloem/wyoming-microsoft-stt/commit/bcb06c5b64131efccaedc8742863ec9c6a458c3f))
+
 ## [1.3.4](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.3...v1.3.4) (2025-09-28)
 
 
