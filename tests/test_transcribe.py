@@ -99,7 +99,7 @@ async def test_transcribe() -> None:
         text = re.sub(r"[^a-z ]", "", text)
         _LOGGER.info(f"Received transcript: {text}")
 
-        original_text = "The Netherlands, informally Holland, is a country in Northwestern Europe with overseas territories in the Caribbean. It is the largest of the four constituent countries of the Kingdom of the Netherlands. The Netherlands consists of 12 provinces. It borders Germany to the east and Belgium to the south, with the North Sea coastline to the north and west. It shares maritime borders with the United Kingdom, Germany, and Belgium."
+        original_text = "The Netherlands, informally Holland, is a country in Northwestern Europe with overseas territories in the Caribbean. It is the largest of the four constituent countries of the Kingdom of the Netherlands. The Netherlands consists of 12 provinces. It borders Germany to the east and Belgium to the south, with a North Sea coastline to the north and west. It shares maritime borders with the United Kingdom, Germany, and Belgium."
         # Remove punctuation and convert to lowercase
         original_text = original_text.lower()
         original_text = re.sub(r"[^a-z ]", "", original_text)
