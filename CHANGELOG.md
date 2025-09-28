@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.6](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.5...v1.3.6) (2025-09-28)
+
+
+### 🐛 Bugfixes
+
+* wait for recognition to be done ([#109](https://github.com/hugobloem/wyoming-microsoft-stt/issues/109)) ([bec7a70](https://github.com/hugobloem/wyoming-microsoft-stt/commit/bec7a701a18dac7328bbb19b87add71088fa7a47))
+
 ## [1.3.5](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.4...v1.3.5) (2025-09-28)
 
 
