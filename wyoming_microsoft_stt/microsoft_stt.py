@@ -85,8 +85,8 @@ class MicrosoftSTT:
             _LOGGER.debug(f"{event.result}")
             self._results = event.result
 
-        self._speech_recognizer.start_continuous_recognition()
         self._speech_recognizer.recognized.connect(recognized)
+        self._speech_recognizer.start_continuous_recognition_async()
 
     def push_audio_chunk(self, chunk: bytes) -> None:
         """Push an audio chunk to the recognizer."""
@@ -107,7 +107,11 @@ class MicrosoftSTT:
             while not self.recognition_done:
                 time.sleep(0.01)
 
-            self._speech_recognizer.stop_continuous_recognition()
+            out_future = self._speech_recognizer.stop_continuous_recognition_async()
+
+            out = out_future.get()
+
+            _LOGGER.debug(f"Transcription stopped, result: {out}")
 
             if self._results is None:
                 _LOGGER.debug("No results from transcription.")
