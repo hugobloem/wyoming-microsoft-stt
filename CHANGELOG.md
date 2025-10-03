@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.7](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.6...v1.3.7) (2025-10-03)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump ruff from 0.13.2 to 0.13.3 ([#111](https://github.com/hugobloem/wyoming-microsoft-stt/issues/111)) ([9cac9e1](https://github.com/hugobloem/wyoming-microsoft-stt/commit/9cac9e124004d4a44d7656d650175bb698e57534))
+
+
+### 👷 Continuous Integration
+
+* test on push to main ([#113](https://github.com/hugobloem/wyoming-microsoft-stt/issues/113)) ([6170108](https://github.com/hugobloem/wyoming-microsoft-stt/commit/61701085f8e57aea6fe93219f02ed99934983378))
+
 ## [1.3.6](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.5...v1.3.6) (2025-09-28)
 
 
