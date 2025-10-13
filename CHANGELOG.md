@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.7](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.6...v1.3.7) (2025-10-13)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump astral-sh/setup-uv from 6 to 7 ([#115](https://github.com/hugobloem/wyoming-microsoft-stt/issues/115)) ([30dee97](https://github.com/hugobloem/wyoming-microsoft-stt/commit/30dee9760f70db7e0cfaf46be17063001c6db1ae))
+* bump pydantic from 2.11.10 to 2.12.0 ([#117](https://github.com/hugobloem/wyoming-microsoft-stt/issues/117)) ([bc6f762](https://github.com/hugobloem/wyoming-microsoft-stt/commit/bc6f762fb2ccb3ab8c6ac12462a193df0ea3ead4))
+* bump pydantic from 2.11.9 to 2.11.10 ([#114](https://github.com/hugobloem/wyoming-microsoft-stt/issues/114)) ([638f418](https://github.com/hugobloem/wyoming-microsoft-stt/commit/638f4187c1a32e799f74dc95d5bef342187dc76e))
+* bump ruff from 0.13.2 to 0.13.3 ([#111](https://github.com/hugobloem/wyoming-microsoft-stt/issues/111)) ([9cac9e1](https://github.com/hugobloem/wyoming-microsoft-stt/commit/9cac9e124004d4a44d7656d650175bb698e57534))
+* bump ruff from 0.13.3 to 0.14.0 ([#116](https://github.com/hugobloem/wyoming-microsoft-stt/issues/116)) ([ff8b55c](https://github.com/hugobloem/wyoming-microsoft-stt/commit/ff8b55c1ff0dfcf25b4436b4d0fb6956277e568d))
+* bump wyoming from 1.7.2 to 1.8.0 ([#118](https://github.com/hugobloem/wyoming-microsoft-stt/issues/118)) ([9330694](https://github.com/hugobloem/wyoming-microsoft-stt/commit/933069429579f4d36651166d487e67abd962e238))
+
+
+### 👷 Continuous Integration
+
+* test on push to main ([#113](https://github.com/hugobloem/wyoming-microsoft-stt/issues/113)) ([6170108](https://github.com/hugobloem/wyoming-microsoft-stt/commit/61701085f8e57aea6fe93219f02ed99934983378))
+
 ## [1.3.6](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.5...v1.3.6) (2025-09-28)
 
 
