@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.8](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.7...v1.3.8) (2025-10-24)
+
+
+### 🐛 Bugfixes
+
+* remove uv from Dockerfile ([7234653](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7234653d52657ee61c007dd743b2b60c81ac42e7))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump pydantic from 2.12.0 to 2.12.1 ([#120](https://github.com/hugobloem/wyoming-microsoft-stt/issues/120)) ([a5407d0](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a5407d003db8fa014214cd3b9f79233ae0a0ccbd))
+* bump pydantic from 2.12.1 to 2.12.2 ([#121](https://github.com/hugobloem/wyoming-microsoft-stt/issues/121)) ([7c6996c](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7c6996c937058263899fb5af16225659d8c4ddff))
+* bump pydantic from 2.12.2 to 2.12.3 ([#123](https://github.com/hugobloem/wyoming-microsoft-stt/issues/123)) ([47aabf6](https://github.com/hugobloem/wyoming-microsoft-stt/commit/47aabf61165afddce8d917ce388eb13602470da6))
+* bump ruff from 0.14.0 to 0.14.1 ([#122](https://github.com/hugobloem/wyoming-microsoft-stt/issues/122)) ([3c08024](https://github.com/hugobloem/wyoming-microsoft-stt/commit/3c08024b1b7ffa99942589cab87e18f37cae1bd1))
+* bump ruff from 0.14.1 to 0.14.2 ([#124](https://github.com/hugobloem/wyoming-microsoft-stt/issues/124)) ([f80de2b](https://github.com/hugobloem/wyoming-microsoft-stt/commit/f80de2be2dd1611654bc19b261dcebf4be90b1fd))
+
 ## [1.3.7](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.6...v1.3.7) (2025-10-13)
 
 
