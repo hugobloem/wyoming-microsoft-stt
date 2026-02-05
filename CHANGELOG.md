@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.3.8](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.7...v1.3.8) (2026-02-05)
+
+
+### 🐛 Bugfixes
+
+* remove uv from Dockerfile ([7234653](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7234653d52657ee61c007dd743b2b60c81ac42e7))
+
+
+### 🔧 Miscellaneous Chores
+
+* bump actions/checkout from 5 to 6 ([#133](https://github.com/hugobloem/wyoming-microsoft-stt/issues/133)) ([0532504](https://github.com/hugobloem/wyoming-microsoft-stt/commit/053250487774a09db16f2b26cc413876d9b57c64))
+* bump azure-cognitiveservices-speech from 1.46.0 to 1.47.0 ([#130](https://github.com/hugobloem/wyoming-microsoft-stt/issues/130)) ([48db2b5](https://github.com/hugobloem/wyoming-microsoft-stt/commit/48db2b572eddc16eae856fddd138d115165317b0))
+* bump pydantic from 2.12.0 to 2.12.1 ([#120](https://github.com/hugobloem/wyoming-microsoft-stt/issues/120)) ([a5407d0](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a5407d003db8fa014214cd3b9f79233ae0a0ccbd))
+* bump pydantic from 2.12.1 to 2.12.2 ([#121](https://github.com/hugobloem/wyoming-microsoft-stt/issues/121)) ([7c6996c](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7c6996c937058263899fb5af16225659d8c4ddff))
+* bump pydantic from 2.12.2 to 2.12.3 ([#123](https://github.com/hugobloem/wyoming-microsoft-stt/issues/123)) ([47aabf6](https://github.com/hugobloem/wyoming-microsoft-stt/commit/47aabf61165afddce8d917ce388eb13602470da6))
+* bump pydantic from 2.12.3 to 2.12.5 ([#135](https://github.com/hugobloem/wyoming-microsoft-stt/issues/135)) ([40aa5ec](https://github.com/hugobloem/wyoming-microsoft-stt/commit/40aa5ecdd799bb3bf5dbe9aff1243f8c038c2731))
+* bump pytest from 8.4.2 to 9.0.2 ([#138](https://github.com/hugobloem/wyoming-microsoft-stt/issues/138)) ([f2f7b01](https://github.com/hugobloem/wyoming-microsoft-stt/commit/f2f7b01830f93c7f914df793671647a81a4f7a79))
+* bump pytest-asyncio from 1.2.0 to 1.3.0 ([#128](https://github.com/hugobloem/wyoming-microsoft-stt/issues/128)) ([58cf118](https://github.com/hugobloem/wyoming-microsoft-stt/commit/58cf118ea904ca606f389555e2797a6af8955f08))
+* bump ruff from 0.14.0 to 0.14.1 ([#122](https://github.com/hugobloem/wyoming-microsoft-stt/issues/122)) ([3c08024](https://github.com/hugobloem/wyoming-microsoft-stt/commit/3c08024b1b7ffa99942589cab87e18f37cae1bd1))
+* bump ruff from 0.14.1 to 0.14.2 ([#124](https://github.com/hugobloem/wyoming-microsoft-stt/issues/124)) ([f80de2b](https://github.com/hugobloem/wyoming-microsoft-stt/commit/f80de2be2dd1611654bc19b261dcebf4be90b1fd))
+* bump ruff from 0.14.2 to 0.15.0 ([#145](https://github.com/hugobloem/wyoming-microsoft-stt/issues/145)) ([327b0db](https://github.com/hugobloem/wyoming-microsoft-stt/commit/327b0db3959212437378e165c29b184e5f37780e))
+
 ## [1.3.7](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.6...v1.3.7) (2025-10-13)
 
 
