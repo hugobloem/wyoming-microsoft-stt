@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.9](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.8...v1.3.9) (2026-03-05)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump azure-cognitiveservices-speech from 1.47.0 to 1.48.2 ([#149](https://github.com/hugobloem/wyoming-microsoft-stt/issues/149)) ([6c0a6df](https://github.com/hugobloem/wyoming-microsoft-stt/commit/6c0a6dfd71de217b2125b2bceed1f83e982c518d))
+* bump docker/login-action from 3 to 4 ([#151](https://github.com/hugobloem/wyoming-microsoft-stt/issues/151)) ([b6033e9](https://github.com/hugobloem/wyoming-microsoft-stt/commit/b6033e9ce4e042a7b41e6b1fb3d9d3c23e95ba8a))
+* bump ruff from 0.15.0 to 0.15.4 ([#150](https://github.com/hugobloem/wyoming-microsoft-stt/issues/150)) ([87e865d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/87e865de7ea950bb9d608f0ab68aaa9221f4fc54))
+
 ## [1.3.8](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.7...v1.3.8) (2026-02-05)
 
 
