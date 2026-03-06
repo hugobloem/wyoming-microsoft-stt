@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.10](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.9...v1.3.10) (2026-03-06)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump docker/build-push-action from 6 to 7 ([#153](https://github.com/hugobloem/wyoming-microsoft-stt/issues/153)) ([46ed79d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/46ed79d680176164417cd39a8d7db2ffe2bd66ad))
+* bump docker/metadata-action from 5 to 6 ([#154](https://github.com/hugobloem/wyoming-microsoft-stt/issues/154)) ([7ec2e95](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7ec2e959c5f77c45274ae679c4afe19e1fa90cf9))
+* bump docker/setup-buildx-action from 3 to 4 ([#155](https://github.com/hugobloem/wyoming-microsoft-stt/issues/155)) ([5cac158](https://github.com/hugobloem/wyoming-microsoft-stt/commit/5cac158861af23a75c86b146a94a3217b9af5ca5))
+* bump ruff from 0.15.4 to 0.15.5 ([#156](https://github.com/hugobloem/wyoming-microsoft-stt/issues/156)) ([19fe0e6](https://github.com/hugobloem/wyoming-microsoft-stt/commit/19fe0e6725bc2013f216f3d3d2eefd7d0c861df2))
+
 ## [1.3.9](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.8...v1.3.9) (2026-03-05)
 
 
