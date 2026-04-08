@@ -13,18 +13,18 @@ wheels = [
 
 [[package]]
 name = "azure-cognitiveservices-speech"
-version = "1.48.2"
+version = "1.49.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "azure-core" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a7/ea/22cd72035b45aa084beadb31799ae4a340b8af31433877c5ad63fcab101d/azure_cognitiveservices_speech-1.48.2-py3-none-macosx_10_14_x86_64.whl", hash = "sha256:62918332eb53e26b71c1d6000bf3e255f7b2b7c8cb327ea2ec7d37181313c885", size = 3272203, upload-time = "2026-02-21T01:19:19.652Z" },
-    { url = "https://files.pythonhosted.org/packages/75/e8/b41a8ee2d91259711f75a970b7b8e2ae489ae9c52f3e86495cc4d2d97cb5/azure_cognitiveservices_speech-1.48.2-py3-none-macosx_11_0_arm64.whl", hash = "sha256:47ffaead342a53ffca74c54bd0843a9c4aabdedd385d45742dac0404c551e384", size = 3111281, upload-time = "2026-02-21T01:19:21.664Z" },
-    { url = "https://files.pythonhosted.org/packages/69/fd/dd4f637821b5c9a10dd7ab1bfb76082cc93dd9ebc1f551403f5b76fb1194/azure_cognitiveservices_speech-1.48.2-py3-none-manylinux1_x86_64.whl", hash = "sha256:9b03c2a0e36d926f5eb3c4c8588c5b444af257be2b7d801575faafc086a62581", size = 35424714, upload-time = "2026-02-21T01:19:25.639Z" },
-    { url = "https://files.pythonhosted.org/packages/75/c1/d4f3cfbe2ada16a38ed72653211506cfa1fbfa4284692b3ed3ff59881777/azure_cognitiveservices_speech-1.48.2-py3-none-manylinux2014_aarch64.whl", hash = "sha256:0f01e5c9326224845031c67812664436da9ba96d19230dfa2f44a4402fbda0e5", size = 35250857, upload-time = "2026-02-21T01:19:30.547Z" },
-    { url = "https://files.pythonhosted.org/packages/d2/ce/6dd6fea0662e95d76b41fe80802c1143569ff362b6f0159938a37a7af320/azure_cognitiveservices_speech-1.48.2-py3-none-win_amd64.whl", hash = "sha256:acd2549b3e716968e0cc9e95dc9cd512042129323158a4eeb74dfb740e53c065", size = 2199550, upload-time = "2026-02-21T01:19:33.121Z" },
-    { url = "https://files.pythonhosted.org/packages/d9/11/c5e1daa73ce98c535dcf727639cc9400b1f7bff4727e8d97088b5b51849c/azure_cognitiveservices_speech-1.48.2-py3-none-win_arm64.whl", hash = "sha256:a8538e3732a2b157f8379063a6f9ad21c71cb3bcc24e8f2b1ee0c90023ca0d4c", size = 1990065, upload-time = "2026-02-21T01:19:34.305Z" },
+    { url = "https://files.pythonhosted.org/packages/e7/c1/22cefd6ceb89656098d4b353eb073267ff9cbbe2f9325a224ee83cb6c87e/azure_cognitiveservices_speech-1.49.0-py3-none-macosx_10_14_x86_64.whl", hash = "sha256:a545140ee81b2691d79e7d918d2e59e622ac8c6aaa67a82475d888a3cf0e36d4", size = 3445919, upload-time = "2026-04-07T18:21:57.792Z" },
+    { url = "https://files.pythonhosted.org/packages/da/e1/413cb8189e8d5d0e9ebb580af82bc964f506477e1436992db9b9738b532f/azure_cognitiveservices_speech-1.49.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:6829fa8667da697ac6d0e007fef0990fbb97a4a54a89906bfed4f6f8abd7c937", size = 3244891, upload-time = "2026-04-07T18:22:00.022Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/4d/5165e31fa55bfb2dd76decd18b81e62b9678efb17824c9f643f63449ff23/azure_cognitiveservices_speech-1.49.0-py3-none-manylinux1_x86_64.whl", hash = "sha256:3aa556354ae0663d0cfea0c5a4fd72ba203191cfd678be71058336ec560f8b44", size = 2773301, upload-time = "2026-04-07T18:22:01.915Z" },
+    { url = "https://files.pythonhosted.org/packages/d6/b1/2cb152e10cbeb9f03eb4ae03b91b85634c1e73621df97ac514c1fa6cceda/azure_cognitiveservices_speech-1.49.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:e4cb429763c24bd069589b2736013c93d02282b0058c3afb2fc0c240cc5df92b", size = 2707645, upload-time = "2026-04-07T18:22:03.756Z" },
+    { url = "https://files.pythonhosted.org/packages/96/ba/a1beb6053e60d396f56765ec6194e76a339b53a2973bd6319922e5d507cc/azure_cognitiveservices_speech-1.49.0-py3-none-win_amd64.whl", hash = "sha256:48b00ab6ce982dcc3a0835ee232d667a869ed5c56cca74ad0f5e2c53d51b1b3f", size = 2587841, upload-time = "2026-04-07T18:22:05.592Z" },
+    { url = "https://files.pythonhosted.org/packages/bd/12/bc2c90b3867c9331bdbaec92ccc29f147f1f6e2dcbdb093cba3f9624f55f/azure_cognitiveservices_speech-1.49.0-py3-none-win_arm64.whl", hash = "sha256:e2d23a535f2756bd855c62ff815cd5a6f36c004c056548c4eeb3bd3ede7e0347", size = 2340202, upload-time = "2026-04-07T18:22:07.119Z" },
 ]
 
 [[package]]
