@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.10](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.9...v1.3.10) (2026-05-04)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump azure-cognitiveservices-speech from 1.48.2 to 1.49.1 ([#166](https://github.com/hugobloem/wyoming-microsoft-stt/issues/166)) ([3a7b0c7](https://github.com/hugobloem/wyoming-microsoft-stt/commit/3a7b0c73ff2278fd20bfde5bf893b14094ac1734))
+* bump docker/build-push-action from 6 to 7 ([#153](https://github.com/hugobloem/wyoming-microsoft-stt/issues/153)) ([46ed79d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/46ed79d680176164417cd39a8d7db2ffe2bd66ad))
+* bump docker/metadata-action from 5 to 6 ([#154](https://github.com/hugobloem/wyoming-microsoft-stt/issues/154)) ([7ec2e95](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7ec2e959c5f77c45274ae679c4afe19e1fa90cf9))
+* bump docker/setup-buildx-action from 3 to 4 ([#155](https://github.com/hugobloem/wyoming-microsoft-stt/issues/155)) ([5cac158](https://github.com/hugobloem/wyoming-microsoft-stt/commit/5cac158861af23a75c86b146a94a3217b9af5ca5))
+* bump googleapis/release-please-action from 4 to 5 ([#171](https://github.com/hugobloem/wyoming-microsoft-stt/issues/171)) ([4812ccd](https://github.com/hugobloem/wyoming-microsoft-stt/commit/4812ccd273043376374fd3633fc8cfd6a25076d2))
+* bump pydantic from 2.12.5 to 2.13.3 ([#170](https://github.com/hugobloem/wyoming-microsoft-stt/issues/170)) ([49a844d](https://github.com/hugobloem/wyoming-microsoft-stt/commit/49a844dc38cb79016eef1a35c6392dc5c23447ef))
+* bump pytest from 9.0.2 to 9.0.3 ([#163](https://github.com/hugobloem/wyoming-microsoft-stt/issues/163)) ([96f2da1](https://github.com/hugobloem/wyoming-microsoft-stt/commit/96f2da15e8130dcdde9c45e7ce8576f43c8cc4db))
+* bump ruff from 0.15.4 to 0.15.5 ([#156](https://github.com/hugobloem/wyoming-microsoft-stt/issues/156)) ([19fe0e6](https://github.com/hugobloem/wyoming-microsoft-stt/commit/19fe0e6725bc2013f216f3d3d2eefd7d0c861df2))
+* bump ruff from 0.15.5 to 0.15.12 ([#172](https://github.com/hugobloem/wyoming-microsoft-stt/issues/172)) ([63d6217](https://github.com/hugobloem/wyoming-microsoft-stt/commit/63d62177ce590740665b7d948b980124f029398d))
+
 ## [1.3.9](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.8...v1.3.9) (2026-03-05)
 
 
