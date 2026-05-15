@@ -315,16 +315,16 @@ wheels = [
 
 [[package]]
 name = "wyoming"
-version = "1.8.0"
+version = "1.9.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c5/ab/8984e755731fac96405b3ecc2236887855120afb9760f829291bd618c26d/wyoming-1.8.0.tar.gz", hash = "sha256:90c16c9fb7e90cbce277032806b7816e6c631812393206a73298f4ad4ffcdb76", size = 37388, upload-time = "2025-10-10T20:49:43.151Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0d/35/cdb33395d434a48995005778660929f8625c05333c143a3aba834b41d582/wyoming-1.9.0.tar.gz", hash = "sha256:4f2a5aa24c221d08af20edbdf8267e4d78bf994e128f3b3cd9a82bb859bc36fb", size = 39186, upload-time = "2026-05-14T15:53:12.352Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/b3/8fbcbd8b6587cb33a7deafc5f20a1ec96ee40e8f7a9c2eccc1982a4e0f06/wyoming-1.8.0-py3-none-any.whl", hash = "sha256:1bbd9fb2af1fcc7dc8d397821438ff89173d2aed33f1092c62aae0b3ce6d168d", size = 39282, upload-time = "2025-10-10T20:49:41.911Z" },
+    { url = "https://files.pythonhosted.org/packages/8f/04/14dec9ad93de23ea1cd4b570b239ac95805e21dd02022a15886a3b3c194b/wyoming-1.9.0-py3-none-any.whl", hash = "sha256:73ad50384d4a3bc7be70cbadfd3ba34902b4a7d94d8b02e59d4ae7a271b93c0b", size = 40520, upload-time = "2026-05-14T15:53:11.1Z" },
 ]
 
 [[package]]
 name = "wyoming-microsoft-stt"
-version = "1.3.9"
+version = "1.3.10"
 source = { virtual = "." }
 dependencies = [
     { name = "azure-cognitiveservices-speech" },
