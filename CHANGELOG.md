@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.11](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.10...v1.3.11) (2026-11-01)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump actions/checkout from 6 to 7 ([#183](https://github.com/hugobloem/wyoming-microsoft-stt/issues/183)) ([a4de01f](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a4de01f9812ca8ee36a094bde74392eab1503ef8))
+* bump azure-cognitiveservices-speech from 1.49.1 to 1.53.0 ([#198](https://github.com/hugobloem/wyoming-microsoft-stt/issues/198)) ([2ca7a05](https://github.com/hugobloem/wyoming-microsoft-stt/commit/2ca7a0533d559256c3168ea645d9338b5535c63e))
+* bump docker/login-action from 4 to 4.5.2 ([#195](https://github.com/hugobloem/wyoming-microsoft-stt/issues/195)) ([eb742a5](https://github.com/hugobloem/wyoming-microsoft-stt/commit/eb742a5bba2868a3315280c62572206e0497acd4))
+* bump pydantic from 2.13.3 to 2.14.1 ([#201](https://github.com/hugobloem/wyoming-microsoft-stt/issues/201)) ([c8c0978](https://github.com/hugobloem/wyoming-microsoft-stt/commit/c8c09784c25922d7073d3989c7f0668f680131dd))
+* bump pytest from 9.0.3 to 9.2.0 ([#199](https://github.com/hugobloem/wyoming-microsoft-stt/issues/199)) ([7a1d2d6](https://github.com/hugobloem/wyoming-microsoft-stt/commit/7a1d2d65b92f4556a1e04304f2f0c25ea22f8921))
+* bump pytest-asyncio from 1.3.0 to 1.4.1 ([#200](https://github.com/hugobloem/wyoming-microsoft-stt/issues/200)) ([ce639aa](https://github.com/hugobloem/wyoming-microsoft-stt/commit/ce639aa77643069aceb0b1668d1077412cf80001))
+* bump ruff from 0.15.12 to 0.17.3 ([#202](https://github.com/hugobloem/wyoming-microsoft-stt/issues/202)) ([46b08dd](https://github.com/hugobloem/wyoming-microsoft-stt/commit/46b08dd0c66960d378c6a13b1fad49517919fbdc))
+* bump wyoming from 1.8.0 to 1.10.2 ([#197](https://github.com/hugobloem/wyoming-microsoft-stt/issues/197)) ([bb9c8cb](https://github.com/hugobloem/wyoming-microsoft-stt/commit/bb9c8cb4b6d9235de72b3a0e57208b2bdabd739c))
+
 ## [1.3.10](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.9...v1.3.10) (2026-05-04)
 
 
