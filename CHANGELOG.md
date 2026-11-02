@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.12](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.11...v1.3.12) (2026-11-02)
+
+
+### 🔧 Miscellaneous Chores
+
+* bump docker/login-action from 4.5.2 to 4.7.0 ([#204](https://github.com/hugobloem/wyoming-microsoft-stt/issues/204)) ([a363e50](https://github.com/hugobloem/wyoming-microsoft-stt/commit/a363e50fee7ed335e853552f3767deeb9bf591c3))
+* bump pydantic from 2.14.1 to 2.14.2 ([#205](https://github.com/hugobloem/wyoming-microsoft-stt/issues/205)) ([d64d736](https://github.com/hugobloem/wyoming-microsoft-stt/commit/d64d7364f71a9754a8d200a128aa934de03424f9))
+
 ## [1.3.11](https://github.com/hugobloem/wyoming-microsoft-stt/compare/v1.3.10...v1.3.11) (2026-11-01)
 
 
