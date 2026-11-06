@@ -346,11 +346,11 @@ wheels = [
 
 [[package]]
 name = "wyoming"
-version = "1.10.2"
+version = "1.11.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/de/37/bfc5d51c916c4bdab16cb7eb62556d3eaaa8b5f8eba33dbe992780dc4a46/wyoming-1.10.2.tar.gz", hash = "sha256:2a84035d9e51f4be68b27c9791273c5bce29f79f0c37137ea49cc417294f9080", size = 45540, upload-time = "2026-08-27T16:30:49.154Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e1/b8/f29d8633ff71b148327f31eaa86d18ad5177ef177ec0d0387169f85e8272/wyoming-1.11.0.tar.gz", hash = "sha256:0b4aec998e7410228d1090edadb3ffb09fb37d66fa30746682e6585f89e3dad8", size = 47294, upload-time = "2026-11-02T17:38:45.574Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/08/98/512f8d7d95eeedbf157994c39572822e3f8ae724ccbb5ae027caa09cf707/wyoming-1.10.2-py3-none-any.whl", hash = "sha256:08aec17ccad4d72fc3f919ab741beacf3f23a1df24c8b9a317ebc6e02d2b227c", size = 44869, upload-time = "2026-08-27T16:30:47.72Z" },
+    { url = "https://files.pythonhosted.org/packages/63/ab/913f6ef5384bf1ad3ea6640c14cb89750fbb4ff3361396b08ea2c2ff4b46/wyoming-1.11.0-py3-none-any.whl", hash = "sha256:ece5ef85603d81118bc2d50679ad1aede87bf24f6ac5ea710ad94577d20168dd", size = 45871, upload-time = "2026-11-02T17:38:44.292Z" },
 ]
 
 [[package]]
